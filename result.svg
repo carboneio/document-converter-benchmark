@@ -8,11 +8,11 @@
           <rect id="bar - Jod DOCX to PDF / 4 threads" x="0" y="378.66607248960196" height="50" width="53.35054545454546" fill="#d62728"/>
           <rect id="bar - Collabora DOCX to PDF / 1 thread" x="0" y="316.55476331946926" height="50" width="67.96645454545455" fill="#ff7f0e"/>
           <rect id="bar - Collabora DOCX to PDF / 4 threads" x="0" y="254.44345414933653" height="50" width="69.48254545454546" fill="#ff7f0e"/>
-          <rect id="bar - Carbone DOCX to PDF / 1 thread" x="0" y="192.33214497920383" height="50" width="107.91990909090909" fill="#1f77b4"/>
-          <rect id="bar - Carbone DOCX to PDF / 4 threads" x="0" y="68.10952663893841" height="50" width="303.6839090909091" fill="#1f77b4"/>
-          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="130.22083580907112" height="50" width="197.3593636363636" fill="#1f77b4"/>
-          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="5.9982174688057057" height="50" width="524.8052727272727" fill="#1f77b4"/>
-          <rect id="bar - Gotenberg HTML to PDF / 1 thread" x="0" y="502.88869082986736" height="50" width="11.415272727272727" fill="#2ca02c"/>
+          <rect id="bar - Carbone DOCX to PDF / 1 thread" x="0" y="192.33214497920383" height="50" width="107.91990909090909" fill="#A644C5"/>
+          <rect id="bar - Carbone DOCX to PDF / 4 threads" x="0" y="68.10952663893841" height="50" width="303.6839090909091" fill="#A644C5"/>
+          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="130.22083580907112" height="50" width="197.3593636363636" fill="#A644C5"/>
+          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="5.9982174688057057" height="50" width="524.8052727272727" fill="#A644C5"/>
+          <rect id="bar - Gotenberg HTML to PDF / 1 thread" x="0" y="502.88869082986736" height="50" width="11.415272727272727" fill="#358BBA"/>
         </g>
         <g id="xAxis" transform="translate(0,560)" fill="none" font-size="12" font-family="sans-serif" text-anchor="middle">
           <path class="domain" stroke="currentColor" d="M0,6V0H545V6"/>
@@ -114,7 +114,7 @@
       <g class="legendColor" transform="translate(0,0)">
         <g class="legendCells" transform="translate(0,15.5)">
           <g class="cell" transform="translate(0, 0)">
-            <rect class="swatch" height="15" width="15" style="fill: rgb(31, 119, 180);"/>
+            <rect class="swatch" height="15" width="15" style="fill: #A644C5;"/>
             <text class="label" transform="translate( 20, 12.5)" font-family="&quot;Arial&quot;, sans-serif" font-size="12px">
               <tspan x="0" dy="0em" style="font-weight: bold;">Carbone</tspan>
             </text>
@@ -125,13 +125,13 @@
               <tspan x="0" dy="0em">Collabora</tspan>
             </text>
           </g>
-          <g class="cell" transform="translate(0, 41)">
-            <rect class="swatch" height="15" width="15" style="fill: rgb(44, 160, 44);"/>
+          <g class="cell" transform="translate(0, 61.5)">
+            <rect class="swatch" height="15" width="15" style="fill: #358BBA;"/>
             <text class="label" transform="translate( 20, 12.5)" font-family="&quot;Arial&quot;, sans-serif" font-size="12px">
               <tspan x="0" dy="0em">Gotenberg</tspan>
             </text>
           </g>
-          <g class="cell" transform="translate(0, 61.5)">
+          <g class="cell" transform="translate(0, 41)">
             <rect class="swatch" height="15" width="15" style="fill: rgb(214, 39, 40);"/>
             <text class="label" transform="translate( 20, 12.5)" font-family="&quot;Arial&quot;, sans-serif" font-size="12px">
               <tspan x="0" dy="0em">Jod</tspan>

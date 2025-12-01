@@ -33,21 +33,21 @@ A detailed performance benchmark comparing the most popular free and open-source
 
 ## 📈 Key Insights
 
-- ⚡ **Fastest Overall**: Carbone Community Edition (Free) with 4 threads (9.27ms avg for HTML→PDF)
-- 🚀 **Best Scalability**: Carbone Community Edition (Free) shows significant performance gains with multi-threading
-- 📄 **DOCX Conversion**: Carbone Community Edition (Free) leads with 16.15ms (4 threads) vs 70.78ms (Collabora)
-- 🌐 **HTML Conversion**: Carbone Community Edition (Free) dominates with 9.27ms vs 432.60ms (Gotenberg)
+- ⚡ **Fastest Overall**: Carbone with 4 threads (9.27ms avg for HTML→PDF)
+- 🚀 **Best Scalability**: Carbone shows significant performance gains with multi-threading
+- 📄 **DOCX Conversion**: Carbone leads with 16.15ms (4 threads) vs 70.78ms (Collabora)
+- 🌐 **HTML Conversion**: Carbone dominates with 9.27ms vs 432.60ms (Gotenberg)
 
 ---
 
 ## 🛠️ Tools Tested
 
-| Tool | Version | Description | License |
-|------|---------|-------------|---------|
-| [**Carbone**](https://carbone.io) | 5.0.4 | Document generation/conversion engine | Commercial/Open Core |
-| [**Collabora**](https://www.collaboraoffice.com) | Latest | LibreOffice-based document server | MPL 2.0 |
-| [**Jod-converter**](https://github.com/jodconverter/jodconverter) | Latest | Java-based document converter | Apache 2.0 |
-| [**Gotenberg**](https://gotenberg.dev) | 8.25.0 | Docker-powered document conversion API | MIT |
+| Tool | Version | Description |
+|------|---------|-------------|
+| [**Carbone Community Edition**](https://carbone.io) | 5.0.4 | Document generation/conversion engine |
+| [**Collabora**](https://www.collaboraoffice.com) | Latest | LibreOffice-based document server |
+| [**Jod-converter**](https://github.com/jodconverter/jodconverter) | Latest | Java-based document converter |
+| [**Gotenberg**](https://gotenberg.dev) | 8.25.0 | Docker-powered document conversion API |
 
 ---
 
@@ -79,7 +79,7 @@ choco install k6
 
 ## 📋 Benchmarking Guide
 
-### 🟢 JOD Converter
+### 🔴 JOD Converter
 
 #### 1. Start JOD Converter
 
@@ -112,7 +112,7 @@ k6 run jod-converter.js
 
 ---
 
-### 🔵 Collabora Converter
+### 🟠 Collabora Converter
 
 #### 1. Start Collabora
 
@@ -152,7 +152,7 @@ k6 run collabora-converter.js
 
 ---
 
-### 🟡 Carbone Converter
+### 🟣 Carbone Converter
 
 **Version**: 5.0.4
 
@@ -204,7 +204,7 @@ k6 run carbone-converter-html.js
 
 ---
 
-### 🟣 Gotenberg Converter
+### 🔵 Gotenberg Converter
 
 **Version**: 8.25.0
 
@@ -247,7 +247,7 @@ k6 run gotenberg-converter-html.js
 **Software Versions:**
 - **Benchmark Date**: December 1st, 2025
 - **Docker Images**: Latest available versions as of the benchmark date
-  - Carbone: `carbone/carbone-ee:full-5.0.4`
+  - Carbone Community Edition (Free Edition): `carbone/carbone-ee:full-5.0.4`
   - Collabora: `collabora/code`
   - Jod-converter: `ghcr.io/jodconverter/jodconverter-examples:rest`
   - Gotenberg: `gotenberg/gotenberg:8` (v8.25.0)
