@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample 1 - Simple Article Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: "DejaVu Sans", Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+    }
+    header {
+      border-bottom: 2px solid #444;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+    h1, h2, h3 {
+      margin: 0 0 10px 0;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+    p {
+      margin: 0 0 12px 0;
+      text-align: justify;
+    }
+    ul, ol {
+      margin: 0 0 12px 25px;
+    }
+    footer {
+      border-top: 1px solid #aaa;
+      margin-top: 30px;
+      padding-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      color: #666;
+    }
+    .small-note {
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sample HTML Page for PDF Conversion Tests</h1>
+    <div class="small-note">
+      This document is designed for benchmarking HTML to PDF conversion engines.
+    </div>
+  </header>
+
+  <main>
+    <h2>Introduction</h2>
+    <p>
+      This sample document is intended to provide a simple yet realistic HTML page
+      that can be used to test the output of HTML to PDF conversion tools. It
+      contains multiple heading levels, justified paragraphs, bulleted and
+      numbered lists, as well as basic text styling.
+    </p>
+
+    <h2>Section with Bulleted List</h2>
+    <p>
+      The list below helps to verify indentation, bullet rendering, and line wrapping:
+    </p>
+    <ul>
+      <li>First list item with a relatively long text to observe wrapping behavior in the generated PDF.</li>
+      <li>Second list item, a bit shorter.</li>
+      <li>Third item with <strong>bold text</strong> and <em>italic text</em> to verify basic styling.</li>
+    </ul>
+
+    <h2>Section with Numbered List</h2>
+    <p>
+      The following ordered list can be used to check numbering and spacing:
+    </p>
+    <ol>
+      <li>Step 1: Open this HTML file in your browser.</li>
+      <li>Step 2: Run your HTML to PDF conversion tool.</li>
+      <li>Step 3: Inspect the output (headings, margins, pagination, typography, etc.).</li>
+    </ol>
+
+    <h2>Another Paragraph Block</h2>
+    <p>
+      You can duplicate or modify this content to create longer documents and test how
+      page breaks are handled. Pay attention to how paragraphs split across pages,
+      how headers and footers are repeated (if your converter supports them), and how
+      font metrics affect line height and spacing.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      This minimalist but structured page can serve as a baseline for comparing
+      different PDF rendering engines or validating your production pipeline. You may
+      extend it with tables, inline code, or other elements if you need more complex
+      scenarios.
+    </p>
+  </main>
+
+  <footer>
+    Sample 1 – Simple Article • Self-contained HTML page for PDF conversion tests
+  </footer>
+</body>
+</html>
