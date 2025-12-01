@@ -31,7 +31,6 @@ A detailed performance benchmark comparing the most popular free and open-source
 
 > ⚡ **Performance Note**: Carbone could potentially be even faster, as it performs additional parsing to detect Carbone tags within documents in addition to the conversion process. This means Carbone is doing more work (template parsing + conversion) while still achieving the best performance.
 
----
 
 ## 📈 Key Insights
 
@@ -40,7 +39,6 @@ A detailed performance benchmark comparing the most popular free and open-source
 - 📄 **DOCX Conversion**: Carbone leads with 16.15ms (4 threads) vs 70.78ms (Collabora)
 - 🌐 **HTML Conversion**: Carbone dominates with 9.27ms vs 432.60ms (Gotenberg)
 
----
 
 ## 🛠️ Tools Tested
 
@@ -112,7 +110,6 @@ curl -v \
 k6 run jod-converter.js
 ```
 
----
 
 ### 🟠 Collabora Converter
 
@@ -152,7 +149,6 @@ curl -k \
 k6 run collabora-converter.js
 ```
 
----
 
 ### 🟣 Carbone Converter
 
@@ -204,7 +200,6 @@ k6 run carbone-converter.js
 k6 run carbone-converter-html.js
 ```
 
----
 
 ### 🔵 Gotenberg Converter
 
@@ -269,7 +264,6 @@ k6 run gotenberg-converter-html.js
 
 For detailed results, see [RESULT.md](RESULT.md).
 
----
 
 ## 📝 Sample Files
 
@@ -278,7 +272,6 @@ This repository includes sample files for testing:
 - `sample.docx` - Sample Word document
 - `sample.html` - Sample HTML file
 
----
 
 ## 🤝 Contributing
 
@@ -290,25 +283,21 @@ Contributions are welcome! If you'd like to:
 
 Please feel free to open an issue or submit a pull request.
 
----
 
 ## 📄 License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
----
 
 ## 🙏 Acknowledgments
 
 - [k6](https://k6.io) - Load testing tool
 - All the open-source document converter projects tested
 
----
 
 ## ⭐ Star History
 
 If you find this benchmark useful, please consider giving it a star! ⭐
 
----
 
 **Made with ❤️ for the open-source community**
