@@ -1,4 +1,4 @@
-# 📊 Document Converter Performance Benchmark 2025
+# 📊 Document Converter Performance Benchmark
 
 > **Comprehensive performance comparison of popular free document conversion tools**
 
