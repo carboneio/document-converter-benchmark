@@ -29,6 +29,8 @@ A detailed performance benchmark comparing the most popular free and open-source
 
 > 💡 **Key Finding**: Carbone consistently outperforms other solutions, especially with multi-threading enabled, achieving up to **529 RPS** for HTML to PDF conversions.
 
+> ⚡ **Performance Note**: Carbone could potentially be even faster, as it performs additional parsing to detect Carbone tags within documents in addition to the conversion process. This means Carbone is doing more work (template parsing + conversion) while still achieving the best performance.
+
 ---
 
 ## 📈 Key Insights
