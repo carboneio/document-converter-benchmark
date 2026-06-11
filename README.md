@@ -17,17 +17,19 @@ A detailed performance benchmark comparing the most popular free and open-source
 
 | Tool              | Threads         | Conversion  | Avg Latency | Throughput (RPS) |
 | ----------------- | --------------- | ----------- | ----------- | ---------------- |
-| **Carbone**       | 4 (chrome)      | HTML → PDF  | 9.27ms      | 529.62           |
-| **Carbone**       | 4 (libreoffice) | DOCX → PDF  | 16.15ms     | 306.47           |
-| **Carbone**       | 1 (chrome)      | HTML → PDF  | 24.88ms     | 199.17           |
-| **Carbone**       | 1 (libreoffice) | DOCX → PDF  | 45.70ms     | 108.91           |
-| **Collabora**     | 4 (libreoffice) | DOCX → PDF  | 70.78ms     | 70.12            |
-| **Collabora**     | 1 (libreoffice) | DOCX → PDF  | 72.34ms     | 68.59            |
+| **Carbone**       | 4 (chrome)      | HTML → PDF  | 8.66ms      | 567.92           |
+| **Carbone**       | 4 (libreoffice) | DOCX → PDF  | 15.49ms     | 320.57           |
+| **Carbone**       | 1 (chrome)      | HTML → PDF  | 22.62ms     | 218.83           |
+| **Carbone**       | 1 (libreoffice) | DOCX → PDF  | 41.44ms     | 120.17           |
+| **Collabora**     | 1 (libreoffice) | DOCX → PDF  | 68.17ms     | 72.93            |
+| **Collabora**     | 4 (libreoffice) | DOCX → PDF  | 70.52ms     | 70.55            |
 | **Jod-converter** | 4 (libreoffice) | DOCX → PDF  | 92.58ms     | 53.84            |
-| **Jod-converter** | 1 (libreoffice) | DOCX → PDF  | 305.41ms    | 16.15            |
-| **Gotenberg**     | 1 (chrome)      | HTML → PDF  | 432.60ms    | 11.52            |
+| **Gotenberg**     | 1 (chrome)      | HTML → PDF  | 132.07ms    | 37.80            |
+| **Gotenberg**     | 4 (chrome)      | HTML → PDF  | 138.16ms    | 36.12            |
+| **Jod-converter** | 1 (libreoffice) | DOCX → PDF  | 305.42ms    | 16.15            |
+| **Gotenberg**     | 1 (libreoffice) | DOCX → PDF  | 650.00ms    | 7.66             |
 
-> 💡 **Key Finding**: Carbone consistently outperforms other solutions, especially with multi-threading enabled, achieving up to **529 RPS** for HTML to PDF conversions.
+> 💡 **Key Finding**: Carbone consistently outperforms other solutions, especially with multi-threading enabled, achieving up to **567.92 RPS** for HTML to PDF conversions.
 
 > ⚡ **Performance Note**: Carbone could potentially be even faster, as it performs additional parsing to detect Carbone tags within documents in addition to the conversion process. This means Carbone is doing more work (template parsing + conversion) while still achieving the best performance.
 
@@ -35,20 +37,20 @@ A detailed performance benchmark comparing the most popular free and open-source
 
 ## 📈 Key Insights
 
-- ⚡ **Fastest Overall**: Carbone with 4 threads (9.27ms avg for HTML→PDF)
+- ⚡ **Fastest Overall**: Carbone with 4 threads (8.66ms avg for HTML→PDF)
 - 🚀 **Best Scalability**: Carbone shows significant performance gains with multi-threading
-- 📄 **DOCX Conversion**: Carbone leads with 16.15ms (4 threads) vs 70.78ms (Collabora)
-- 🌐 **HTML Conversion**: Carbone dominates with 9.27ms vs 432.60ms (Gotenberg)
+- 📄 **DOCX Conversion**: Carbone leads with 15.49ms (4 threads) vs 70.52ms (Collabora)
+- 🌐 **HTML Conversion**: Carbone dominates with 8.66ms vs 132.07ms (Gotenberg)
 
 
 ## 🛠️ Tools Tested
 
 | Tool | Version | Description |
 |------|---------|-------------|
-| [**Carbone Community Edition**](https://carbone.io) | 5.0.4 | Document generation/conversion engine |
+| [**Carbone Community Edition**](https://carbone.io) | 5.8.0 | Document generation/conversion engine |
 | [**Collabora**](https://www.collaboraoffice.com) | Latest | LibreOffice-based document server |
 | [**Jod-converter**](https://github.com/jodconverter/jodconverter) | Latest | Java-based document converter |
-| [**Gotenberg**](https://gotenberg.dev) | 8.25.0 | Docker-powered document conversion API |
+| [**Gotenberg**](https://gotenberg.dev) | 8.33.0 | Docker-powered document conversion API |
 
 ---
 
@@ -118,6 +120,7 @@ k6 run jod-converter.js
 
 ```bash
 # Single thread
+docker rm -f collabora
 docker run -d --name collabora --privileged -t \
   -p 127.0.0.1:9980:9980 \
   -e "extra_params=--o:ssl.enable=false --o:ssl.termination=true --o:per_document.max_concurrency=1 --o:num_prespawn_children=1" \
@@ -153,18 +156,18 @@ k6 run collabora-converter.js
 
 ### 🟣 Carbone Converter
 
-**Version**: 5.0.4
+**Version**: 5.8.0
 
 #### 1. Start Carbone
 
 ```bash
 # Single thread
 docker run -t -i --rm -p 4000:4000 \
-  carbone/carbone-ee:full-5.0.4 webserver -s -f 1
+  carbone/carbone-ee:full-5.8.0 webserver -s -f 1
 
 # Multi-thread (4 threads)
 docker run -t -i --rm -p 4000:4000 \
-  carbone/carbone-ee:full-5.0.4 webserver -s -f 4
+  carbone/carbone-ee:full-5.8.0 webserver -s -f 4
 ```
 
 #### 2. Verify Conversion
@@ -204,30 +207,49 @@ k6 run carbone-converter-html.js
 
 ### 🔵 Gotenberg Converter
 
-**Version**: 8.25.0
-
-> ⚠️ **Limitation**: Gotenberg does not support multi-threading configuration.
+**Version**: 8.33.0
 
 #### 1. Start Gotenberg
 
 ```bash
+# Single thread
 docker run --rm -p 4000:3000 \
-  gotenberg/gotenberg:8 gotenberg
+  gotenberg/gotenberg:8.33.0 \
+  gotenberg \
+  --chromium-auto-start=true
+
+# Multi-thread (4 concurrency)
+docker run --rm -p 4000:3000 \
+  gotenberg/gotenberg:8.33.0 \
+  gotenberg \
+  --chromium-max-concurrency=4 \
+  --chromium-auto-start=true
 ```
 
 #### 2. Verify Conversion
 
 ```bash
+# HTML to PDF
 curl -v \
   -X POST "http://localhost:4000/forms/chromium/convert/html" \
   -F "files=@./sample.html;filename=index.html" \
   -o outputGotenberg.pdf
+
+# DOCX to PDF
+curl -v \
+  -X POST "http://localhost:4000/forms/libreoffice/convert" \
+  -F "files=@./sample.docx;filename=sample.docx" \
+  -o outputGotenbergDOCX.pdf
 ```
 
 #### 3. Run Benchmark
 
 ```bash
+# HTML to PDF
 k6 run gotenberg-converter-html.js
+
+# DOCX to PDF
+k6 run gotenberg-converter.js
 ```
 
 ---
@@ -243,12 +265,12 @@ k6 run gotenberg-converter-html.js
 - **Container Runtime**: Docker Desktop
 
 **Software Versions:**
-- **Benchmark Date**: December 1st, 2025
+- **Benchmark Date**: June 11th, 2026
 - **Docker Images**: Latest available versions as of the benchmark date
-  - Carbone Community Edition (Free Edition): `carbone/carbone-ee:full-5.0.4`
+  - Carbone Community Edition (Free Edition): `carbone/carbone-ee:full-5.8.0`
   - Collabora: `collabora/code`
   - Jod-converter: `ghcr.io/jodconverter/jodconverter-examples:rest`
-  - Gotenberg: `gotenberg/gotenberg:8` (v8.25.0)
+  - Gotenberg: `gotenberg/gotenberg:8.33.0` (`--chromium-max-concurrency=4`, `--chromium-auto-start=true`)
 
 ### Test Configuration
 
