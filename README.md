@@ -33,7 +33,7 @@ A detailed performance benchmark comparing the most popular free and open-source
 
 > ⚡ **Performance Note**: Carbone could potentially be even faster, as it performs additional parsing to detect Carbone tags within documents in addition to the conversion process. This means Carbone is doing more work (template parsing + conversion) while still achieving the best performance.
 
-> **Gotenberg** does not support multi-threading.
+> **Gotenberg** does not support multi-threading for LibreOffice
 
 ## 📈 Key Insights
 
