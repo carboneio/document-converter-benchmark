@@ -2,6 +2,7 @@ import http from 'k6/http';
 import { check } from 'k6';
 import { Trend } from 'k6/metrics';
 import { sleep } from 'k6';
+import encoding from 'k6/encoding';
 
 // --- Load options ---
 // Adjust vus/duration as you like
@@ -29,7 +30,8 @@ const fileData = open('./sample.docx', 'b');
 const DOCX_MIME =
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 
-const DocxBase64= `data:${DOCX_MIME};base64,${fileData.toString('base64')}`;
+// ArrayBuffer.toString() does not encode in k6, it returns "[object ArrayBuffer]"
+const DocxBase64 = `data:${DOCX_MIME};base64,${encoding.b64encode(fileData)}`;
 export default function () {
   const payload = JSON.stringify({
     data: {}, //  Carbone requirements

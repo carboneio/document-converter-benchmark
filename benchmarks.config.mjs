@@ -87,12 +87,11 @@ const carboneDocxIce = {
   verify: carboneJson(DOCX_MIME, sampleDocx, { converter: 'I' }),
 };
 
-// Kept for comparison with ICE: only reported in RESULT.md
 const carboneDocxLibreoffice = {
   conversion: 'DOCX → PDF',
   variant: 'libreoffice',
   engine: 'libreoffice',
-  headline: false,
+  chartTag: 'LibreOffice',
   script: 'carbone-converter.js',
   metric: 'carbone_latency',
   k6Env: { CONVERTER: 'L' },

@@ -1,18 +1,18 @@
   █ THRESHOLDS
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=766.17ms
+    ✓ 'p(95)<5000' p(95)=777.01ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
     pandoc_html_latency
-    ✓ 'p(95)<5000' p(95)=766.174
+    ✓ 'p(95)<5000' p(95)=777.0178
 
 
   █ TOTAL RESULTS
 
-    checks_total.......: 820     13.581357/s
+    checks_total.......: 820     13.588338/s
     checks_succeeded...: 100.00% 820 out of 820
     checks_failed......: 0.00%   0 out of 820
 
@@ -20,17 +20,17 @@
     ✓ duration < 10s
 
     CUSTOM
-    pandoc_html_latency............: avg=734.28411 min=710.308  med=730.9985 max=810.604  p(90)=756.4396 p(95)=766.174
+    pandoc_html_latency............: avg=734.610066 min=705.262  med=725.277  max=1054.078 p(90)=746.4426 p(95)=777.0178
 
     HTTP
-    http_req_duration..............: avg=734.28ms  min=710.3ms  med=730.99ms max=810.6ms  p(90)=756.43ms p(95)=766.17ms
-      { expected_response:true }...: avg=734.28ms  min=710.3ms  med=730.99ms max=810.6ms  p(90)=756.43ms p(95)=766.17ms
+    http_req_duration..............: avg=734.61ms   min=705.26ms med=725.27ms max=1.05s    p(90)=746.44ms p(95)=777.01ms
+      { expected_response:true }...: avg=734.61ms   min=705.26ms med=725.27ms max=1.05s    p(90)=746.44ms p(95)=777.01ms
     http_req_failed................: 0.00%  0 out of 410
-    http_reqs......................: 410    6.790679/s
+    http_reqs......................: 410    6.794169/s
 
     EXECUTION
-    iteration_duration.............: avg=734.87ms  min=710.67ms med=731.58ms max=811.14ms p(90)=757.16ms p(95)=766.68ms
-    iterations.....................: 410    6.790679/s
+    iteration_duration.............: avg=735.06ms   min=705.69ms med=725.85ms max=1.05s    p(90)=746.8ms  p(95)=777.84ms
+    iterations.....................: 410    6.794169/s
     vus............................: 5      min=5        max=5
     vus_max........................: 5      min=5        max=5
 
@@ -39,5 +39,5 @@
     data_sent......................: 1.3 MB 22 kB/s
 
 
-running (1m00.4s), 0/5 VUs, 410 complete and 0 interrupted iterations
+running (1m00.3s), 0/5 VUs, 410 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s

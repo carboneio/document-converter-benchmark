@@ -7,21 +7,21 @@ RESULT
 
 | Tool              | Engine      | Threads | Conversion | Avg Latency | p(95)    | Throughput (RPS) | In README |
 | ----------------- | ----------- | ------- | ---------- | ----------- | -------- | ---------------- | --------- |
-| **Carbone**       | Carbone ICE | 4       | DOCX → PDF | 1.69ms      | 2.61ms   | 2812.39          | yes       |
-| **Carbone**       | Carbone ICE | 1       | DOCX → PDF | 1.84ms      | 2.85ms   | 2597.40          | yes       |
-| **Carbone**       | Chrome      | 4       | HTML → PDF | 7.50ms      | 9.89ms   | 643.89           | yes       |
-| **Carbone**       | LibreOffice | 4       | DOCX → PDF | 15.15ms     | 19.19ms  | 326.28           | no        |
-| **Carbone**       | Chrome      | 1       | HTML → PDF | 17.56ms     | 20.82ms  | 279.76           | yes       |
-| **Carbone**       | LibreOffice | 1       | DOCX → PDF | 43.19ms     | 51.87ms  | 115.03           | no        |
-| **Collabora**     | LibreOffice | 4       | DOCX → PDF | 79.07ms     | 85.51ms  | 62.75            | yes       |
-| **Collabora**     | LibreOffice | 1       | DOCX → PDF | 89.21ms     | 97.64ms  | 55.64            | yes       |
-| **Jod-converter** | LibreOffice | 4       | DOCX → PDF | 91.00ms     | 119.50ms | 54.72            | yes       |
-| **Jod-converter** | LibreOffice | 1       | DOCX → PDF | 292.54ms    | 279.97ms | 17.04            | yes       |
-| **Gotenberg**     | Chrome      | 4       | HTML → PDF | 371.65ms    | 475.54ms | 13.43            | yes       |
-| **Gotenberg**     | Chrome      | 1       | HTML → PDF | 377.21ms    | 441.62ms | 13.24            | yes       |
-| **Gotenberg**     | LibreOffice | 1       | DOCX → PDF | 499.59ms    | 620.62ms | 9.98             | yes       |
-| **Pandoc**        | LaTeX       | n/a     | DOCX → PDF | 526.94ms    | 549.96ms | 9.45             | yes       |
-| **Pandoc**        | LaTeX       | n/a     | HTML → PDF | 734.28ms    | 766.17ms | 6.79             | yes       |
+| **Carbone**       | Chrome      | 4       | HTML → PDF | 7.29ms      | 9.57ms   | 669.72           | yes       |
+| **Carbone**       | Carbone ICE | 4       | DOCX → PDF | 16.58ms     | 19.81ms  | 286.77           | yes       |
+| **Carbone**       | Chrome      | 1       | HTML → PDF | 17.74ms     | 20.84ms  | 277.39           | yes       |
+| **Carbone**       | LibreOffice | 4       | DOCX → PDF | 49.25ms     | 58.71ms  | 99.50            | yes       |
+| **Carbone**       | Carbone ICE | 1       | DOCX → PDF | 50.88ms     | 57.91ms  | 96.26            | yes       |
+| **Collabora**     | LibreOffice | 4       | DOCX → PDF | 79.81ms     | 87.69ms  | 62.22            | yes       |
+| **Collabora**     | LibreOffice | 1       | DOCX → PDF | 87.52ms     | 96.07ms  | 56.74            | yes       |
+| **Jod-converter** | LibreOffice | 4       | DOCX → PDF | 90.37ms     | 118.19ms | 55.13            | yes       |
+| **Carbone**       | LibreOffice | 1       | DOCX → PDF | 171.33ms    | 183.00ms | 28.96            | yes       |
+| **Jod-converter** | LibreOffice | 1       | DOCX → PDF | 302.16ms    | 295.92ms | 16.50            | yes       |
+| **Gotenberg**     | Chrome      | 4       | HTML → PDF | 355.62ms    | 441.26ms | 14.03            | yes       |
+| **Gotenberg**     | Chrome      | 1       | HTML → PDF | 369.83ms    | 421.95ms | 13.50            | yes       |
+| **Gotenberg**     | LibreOffice | 1       | DOCX → PDF | 501.64ms    | 629.24ms | 9.91             | yes       |
+| **Pandoc**        | LaTeX       | n/a     | DOCX → PDF | 521.95ms    | 532.94ms | 9.57             | yes       |
+| **Pandoc**        | LaTeX       | n/a     | HTML → PDF | 734.61ms    | 777.02ms | 6.79             | yes       |
 
 # Jod-converter DOCX → PDF (LibreOffice)
 
@@ -33,43 +33,43 @@ RESULT
   █ THRESHOLDS
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=279.96ms
+    ✓ 'p(95)<5000' p(95)=295.91ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
     jodconverter_latency
-    ✓ 'p(95)<5000' p(95)=279.9699
+    ✓ 'p(95)<5000' p(95)=295.9185
 
   █ TOTAL RESULTS
 
-    checks_total.......: 2054    34.079232/s
-    checks_succeeded...: 100.00% 2054 out of 2054
-    checks_failed......: 0.00%   0 out of 2054
+    checks_total.......: 1988    33.003196/s
+    checks_succeeded...: 100.00% 1988 out of 1988
+    checks_failed......: 0.00%   0 out of 1988
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    jodconverter_latency...........: avg=292.536322 min=74.625  med=248.974  max=1978.467 p(90)=272.5958 p(95)=279.9699
+    jodconverter_latency...........: avg=302.163891 min=85.006  med=255.425  max=2054.992 p(90)=276.8359 p(95)=295.9185
 
     HTTP
-    http_req_duration..............: avg=292.53ms   min=74.62ms med=248.97ms max=1.97s    p(90)=272.59ms p(95)=279.96ms
-      { expected_response:true }...: avg=292.53ms   min=74.62ms med=248.97ms max=1.97s    p(90)=272.59ms p(95)=279.96ms
-    http_req_failed................: 0.00% 0 out of 1027
-    http_reqs......................: 1027  17.039616/s
+    http_req_duration..............: avg=302.16ms   min=85ms    med=255.42ms max=2.05s    p(90)=276.83ms p(95)=295.91ms
+      { expected_response:true }...: avg=302.16ms   min=85ms    med=255.42ms max=2.05s    p(90)=276.83ms p(95)=295.91ms
+    http_req_failed................: 0.00% 0 out of 994
+    http_reqs......................: 994   16.501598/s
 
     EXECUTION
-    iteration_duration.............: avg=292.87ms   min=80.91ms med=249.24ms max=1.97s    p(90)=272.75ms p(95)=280.13ms
-    iterations.....................: 1027  17.039616/s
-    vus............................: 5     min=5         max=5
-    vus_max........................: 5     min=5         max=5
+    iteration_duration.............: avg=302.48ms   min=92.06ms med=255.71ms max=2.05s    p(90)=277.26ms p(95)=296.44ms
+    iterations.....................: 994   16.501598/s
+    vus............................: 5     min=5        max=5
+    vus_max........................: 5     min=5        max=5
 
     NETWORK
-    data_received..................: 65 MB 1.1 MB/s
-    data_sent......................: 34 MB 566 kB/s
+    data_received..................: 62 MB 1.0 MB/s
+    data_sent......................: 33 MB 548 kB/s
 
-running (1m00.3s), 0/5 VUs, 1027 complete and 0 interrupted iterations
+running (1m00.2s), 0/5 VUs, 994 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -81,43 +81,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=119.5ms
+    ✓ 'p(95)<5000' p(95)=118.18ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
     jodconverter_latency
-    ✓ 'p(95)<5000' p(95)=119.5024
+    ✓ 'p(95)<5000' p(95)=118.1892
 
   █ TOTAL RESULTS
 
-    checks_total.......: 6574    109.445893/s
-    checks_succeeded...: 100.00% 6574 out of 6574
-    checks_failed......: 0.00%   0 out of 6574
+    checks_total.......: 6626    110.267686/s
+    checks_succeeded...: 100.00% 6626 out of 6626
+    checks_failed......: 0.00%   0 out of 6626
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    jodconverter_latency...........: avg=90.998232 min=57.328  med=74.249  max=1951.33 p(90)=107.6208 p(95)=119.5024
+    jodconverter_latency...........: avg=90.365987 min=56.424  med=72.231  max=1975.232 p(90)=108.9868 p(95)=118.1892
 
     HTTP
-    http_req_duration..............: avg=90.99ms   min=57.32ms med=74.24ms max=1.95s   p(90)=107.62ms p(95)=119.5ms
-      { expected_response:true }...: avg=90.99ms   min=57.32ms med=74.24ms max=1.95s   p(90)=107.62ms p(95)=119.5ms
-    http_req_failed................: 0.00%  0 out of 3287
-    http_reqs......................: 3287   54.722947/s
+    http_req_duration..............: avg=90.36ms   min=56.42ms med=72.23ms max=1.97s    p(90)=108.98ms p(95)=118.18ms
+      { expected_response:true }...: avg=90.36ms   min=56.42ms med=72.23ms max=1.97s    p(90)=108.98ms p(95)=118.18ms
+    http_req_failed................: 0.00%  0 out of 3313
+    http_reqs......................: 3313   55.133843/s
 
     EXECUTION
-    iteration_duration.............: avg=91.29ms   min=57.49ms med=74.58ms max=1.95s   p(90)=108.15ms p(95)=119.68ms
-    iterations.....................: 3287   54.722947/s
+    iteration_duration.............: avg=90.61ms   min=56.7ms  med=72.48ms max=1.97s    p(90)=109.2ms  p(95)=118.41ms
+    iterations.....................: 3313   55.133843/s
     vus............................: 5      min=5         max=5
     vus_max........................: 5      min=5         max=5
 
     NETWORK
-    data_received..................: 206 MB 3.4 MB/s
-    data_sent......................: 109 MB 1.8 MB/s
+    data_received..................: 208 MB 3.5 MB/s
+    data_sent......................: 110 MB 1.8 MB/s
 
-running (1m00.1s), 0/5 VUs, 3287 complete and 0 interrupted iterations
+running (1m00.1s), 0/5 VUs, 3313 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -131,43 +131,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     collabora_latency
-    ✓ 'p(95)<5000' p(95)=97.6449
+    ✓ 'p(95)<5000' p(95)=96.0662
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=97.64ms
+    ✓ 'p(95)<5000' p(95)=96.06ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 6686    111.285303/s
-    checks_succeeded...: 100.00% 6686 out of 6686
-    checks_failed......: 0.00%   0 out of 6686
+    checks_total.......: 6818    113.48545/s
+    checks_succeeded...: 100.00% 6818 out of 6818
+    checks_failed......: 0.00%   0 out of 6818
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    collabora_latency..............: avg=89.212077 min=72.829  med=88.184  max=176.687  p(90)=93.6518 p(95)=97.6449
+    collabora_latency..............: avg=87.5244 min=71.395  med=86.696  max=162.58   p(90)=91.7566 p(95)=96.0662
 
     HTTP
-    http_req_duration..............: avg=89.21ms   min=72.82ms med=88.18ms max=176.68ms p(90)=93.65ms p(95)=97.64ms
-      { expected_response:true }...: avg=89.21ms   min=72.82ms med=88.18ms max=176.68ms p(90)=93.65ms p(95)=97.64ms
-    http_req_failed................: 0.00%  0 out of 3343
-    http_reqs......................: 3343   55.642652/s
+    http_req_duration..............: avg=87.52ms min=71.39ms med=86.69ms max=162.58ms p(90)=91.75ms p(95)=96.06ms
+      { expected_response:true }...: avg=87.52ms min=71.39ms med=86.69ms max=162.58ms p(90)=91.75ms p(95)=96.06ms
+    http_req_failed................: 0.00%  0 out of 3409
+    http_reqs......................: 3409   56.742725/s
 
     EXECUTION
-    iteration_duration.............: avg=89.78ms   min=73.23ms med=88.76ms max=178.86ms p(90)=94.16ms p(95)=98.25ms
-    iterations.....................: 3343   55.642652/s
+    iteration_duration.............: avg=88.04ms min=71.6ms  med=87.21ms max=162.98ms p(90)=92.25ms p(95)=96.53ms
+    iterations.....................: 3409   56.742725/s
     vus............................: 5      min=5         max=5
     vus_max........................: 5      min=5         max=5
 
     NETWORK
-    data_received..................: 232 MB 3.9 MB/s
-    data_sent......................: 111 MB 1.8 MB/s
+    data_received..................: 237 MB 3.9 MB/s
+    data_sent......................: 113 MB 1.9 MB/s
 
-running (1m00.1s), 0/5 VUs, 3343 complete and 0 interrupted iterations
+running (1m00.1s), 0/5 VUs, 3409 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -179,43 +179,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     collabora_latency
-    ✓ 'p(95)<5000' p(95)=85.5122
+    ✓ 'p(95)<5000' p(95)=87.68555
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=85.51ms
+    ✓ 'p(95)<5000' p(95)=87.68ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 7540    125.508495/s
-    checks_succeeded...: 100.00% 7540 out of 7540
-    checks_failed......: 0.00%   0 out of 7540
+    checks_total.......: 7476    124.442404/s
+    checks_succeeded...: 100.00% 7476 out of 7476
+    checks_failed......: 0.00%   0 out of 7476
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    collabora_latency..............: avg=79.067397 min=69.17   med=78.402  max=133.618  p(90)=82.907  p(95)=85.5122
+    collabora_latency..............: avg=79.811671 min=70.017  med=78.8605 max=133.593  p(90)=84.5213 p(95)=87.68555
 
     HTTP
-    http_req_duration..............: avg=79.06ms   min=69.17ms med=78.4ms  max=133.61ms p(90)=82.9ms  p(95)=85.51ms
-      { expected_response:true }...: avg=79.06ms   min=69.17ms med=78.4ms  max=133.61ms p(90)=82.9ms  p(95)=85.51ms
-    http_req_failed................: 0.00%  0 out of 3770
-    http_reqs......................: 3770   62.754247/s
+    http_req_duration..............: avg=79.81ms   min=70.01ms med=78.86ms max=133.59ms p(90)=84.52ms p(95)=87.68ms
+      { expected_response:true }...: avg=79.81ms   min=70.01ms med=78.86ms max=133.59ms p(90)=84.52ms p(95)=87.68ms
+    http_req_failed................: 0.00%  0 out of 3738
+    http_reqs......................: 3738   62.221202/s
 
     EXECUTION
-    iteration_duration.............: avg=79.63ms   min=69.56ms med=78.97ms max=133.92ms p(90)=83.48ms p(95)=86.26ms
-    iterations.....................: 3770   62.754247/s
+    iteration_duration.............: avg=80.32ms   min=70.57ms med=79.37ms max=134ms    p(90)=85.06ms p(95)=88.36ms
+    iterations.....................: 3738   62.221202/s
     vus............................: 5      min=5         max=5
     vus_max........................: 5      min=5         max=5
 
     NETWORK
-    data_received..................: 262 MB 4.4 MB/s
-    data_sent......................: 125 MB 2.1 MB/s
+    data_received..................: 260 MB 4.3 MB/s
+    data_sent......................: 124 MB 2.1 MB/s
 
-running (1m00.1s), 0/5 VUs, 3770 complete and 0 interrupted iterations
+running (1m00.1s), 0/5 VUs, 3738 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -231,43 +231,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     carbone_latency
-    ✓ 'p(95)<5000' p(95)=2.8514
+    ✓ 'p(95)<5000' p(95)=57.9118
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=2.85ms
+    ✓ 'p(95)<5000' p(95)=57.91ms
 
     http_req_failed
-    ✗ 'rate<0.01' rate=100.00%
+    ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 311706 5194.795672/s
-    checks_succeeded...: 50.00% 155853 out of 311706
-    checks_failed......: 50.00% 155853 out of 311706
+    checks_total.......: 11560   192.510646/s
+    checks_succeeded...: 100.00% 11560 out of 11560
+    checks_failed......: 0.00%   0 out of 11560
 
-    ✗ status is 200
-      ↳  0% — ✓ 0 / ✗ 155853
+    ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    carbone_latency......: avg=1.835397 min=0.809    med=1.707  max=30.638  p(90)=2.248  p(95)=2.8514
+    carbone_latency................: avg=50.875799 min=22.157  med=49.9275 max=103.751  p(90)=54.785  p(95)=57.9118
 
     HTTP
-    http_req_duration....: avg=1.83ms   min=809µs    med=1.7ms  max=30.63ms p(90)=2.24ms p(95)=2.85ms
-    http_req_failed......: 100.00% 155853 out of 155853
-    http_reqs............: 155853  2597.397836/s
+    http_req_duration..............: avg=50.87ms   min=22.15ms med=49.92ms max=103.75ms p(90)=54.78ms p(95)=57.91ms
+      { expected_response:true }...: avg=50.87ms   min=22.15ms med=49.92ms max=103.75ms p(90)=54.78ms p(95)=57.91ms
+    http_req_failed................: 0.00%  0 out of 5780
+    http_reqs......................: 5780   96.255323/s
 
     EXECUTION
-    iteration_duration...: avg=1.91ms   min=877.62µs med=1.76ms max=30.69ms p(90)=2.4ms  p(95)=3.04ms
-    iterations...........: 155853  2597.397836/s
-    vus..................: 5       min=5                max=5
-    vus_max..............: 5       min=5                max=5
+    iteration_duration.............: avg=51.9ms    min=24.67ms med=50.86ms max=105.56ms p(90)=55.72ms p(95)=58.86ms
+    iterations.....................: 5780   96.255323/s
+    vus............................: 5      min=5         max=5
+    vus_max........................: 5      min=5         max=5
 
     NETWORK
-    data_received........: 86 MB   1.4 MB/s
-    data_sent............: 49 MB   821 kB/s
+    data_received..................: 309 MB 5.1 MB/s
+    data_sent......................: 254 MB 4.2 MB/s
 
-running (1m00.0s), 0/5 VUs, 155853 complete and 0 interrupted iterations
+running (1m00.0s), 0/5 VUs, 5780 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -279,43 +279,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     carbone_latency
-    ✓ 'p(95)<5000' p(95)=2.61
+    ✓ 'p(95)<5000' p(95)=19.807
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=2.61ms
+    ✓ 'p(95)<5000' p(95)=19.8ms
 
     http_req_failed
-    ✗ 'rate<0.01' rate=100.00%
+    ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 337510 5624.786712/s
-    checks_succeeded...: 50.00% 168755 out of 337510
-    checks_failed......: 50.00% 168755 out of 337510
+    checks_total.......: 34422   573.546481/s
+    checks_succeeded...: 100.00% 34422 out of 34422
+    checks_failed......: 0.00%   0 out of 34422
 
-    ✗ status is 200
-      ↳  0% — ✓ 0 / ✗ 168755
+    ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    carbone_latency......: avg=1.690596 min=0.782    med=1.576  max=33.896  p(90)=2.092  p(95)=2.61
+    carbone_latency................: avg=16.583785 min=12.604  med=16.261  max=102.269  p(90)=18.669  p(95)=19.807
 
     HTTP
-    http_req_duration....: avg=1.69ms   min=782µs    med=1.57ms max=33.89ms p(90)=2.09ms p(95)=2.61ms
-    http_req_failed......: 100.00% 168755 out of 168755
-    http_reqs............: 168755  2812.393356/s
+    http_req_duration..............: avg=16.58ms   min=12.6ms  med=16.26ms max=102.26ms p(90)=18.66ms p(95)=19.8ms
+      { expected_response:true }...: avg=16.58ms   min=12.6ms  med=16.26ms max=102.26ms p(90)=18.66ms p(95)=19.8ms
+    http_req_failed................: 0.00%  0 out of 17211
+    http_reqs......................: 17211  286.77324/s
 
     EXECUTION
-    iteration_duration...: avg=1.77ms   min=804.33µs med=1.64ms max=33.92ms p(90)=2.23ms p(95)=2.79ms
-    iterations...........: 168755  2812.393356/s
-    vus..................: 5       min=5                max=5
-    vus_max..............: 5       min=5                max=5
+    iteration_duration.............: avg=17.42ms   min=13.18ms med=17.05ms max=104.88ms p(90)=19.63ms p(95)=20.71ms
+    iterations.....................: 17211  286.77324/s
+    vus............................: 5      min=5          max=5
+    vus_max........................: 5      min=5          max=5
 
     NETWORK
-    data_received........: 93 MB   1.5 MB/s
-    data_sent............: 53 MB   889 kB/s
+    data_received..................: 921 MB 15 MB/s
+    data_sent......................: 756 MB 13 MB/s
 
-running (1m00.0s), 0/5 VUs, 168755 complete and 0 interrupted iterations
+running (1m00.0s), 0/5 VUs, 17211 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -331,43 +331,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     carbone_latency
-    ✓ 'p(95)<5000' p(95)=51.86925
+    ✓ 'p(95)<5000' p(95)=182.9957
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=51.86ms
+    ✓ 'p(95)<5000' p(95)=182.99ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 13812   230.056491/s
-    checks_succeeded...: 100.00% 13812 out of 13812
-    checks_failed......: 0.00%   0 out of 13812
+    checks_total.......: 3484    57.915516/s
+    checks_succeeded...: 100.00% 3484 out of 3484
+    checks_failed......: 0.00%   0 out of 3484
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    carbone_latency................: avg=43.191222 min=22.499  med=41.7525 max=276.524  p(90)=48.0005 p(95)=51.86925
+    carbone_latency................: avg=171.334758 min=56.575  med=166.188  max=1123.133 p(90)=176.0245 p(95)=182.9957
 
     HTTP
-    http_req_duration..............: avg=43.19ms   min=22.49ms med=41.75ms max=276.52ms p(90)=48ms    p(95)=51.86ms
-      { expected_response:true }...: avg=43.19ms   min=22.49ms med=41.75ms max=276.52ms p(90)=48ms    p(95)=51.86ms
-    http_req_failed................: 0.00%  0 out of 6906
-    http_reqs......................: 6906   115.028245/s
+    http_req_duration..............: avg=171.33ms   min=56.57ms med=166.18ms max=1.12s    p(90)=176.02ms p(95)=182.99ms
+      { expected_response:true }...: avg=171.33ms   min=56.57ms med=166.18ms max=1.12s    p(90)=176.02ms p(95)=182.99ms
+    http_req_failed................: 0.00%  0 out of 1742
+    http_reqs......................: 1742   28.957758/s
 
     EXECUTION
-    iteration_duration.............: avg=43.43ms   min=24.66ms med=41.98ms max=276.64ms p(90)=48.23ms p(95)=52.12ms
-    iterations.....................: 6906   115.028245/s
+    iteration_duration.............: avg=172.45ms   min=59.07ms med=167.22ms max=1.12s    p(90)=177.13ms p(95)=183.96ms
+    iterations.....................: 1742   28.957758/s
     vus............................: 5      min=5         max=5
     vus_max........................: 5      min=5         max=5
 
     NETWORK
     data_received..................: 127 MB 2.1 MB/s
-    data_sent......................: 2.2 MB 36 kB/s
+    data_sent......................: 77 MB  1.3 MB/s
 
-running (1m00.0s), 0/5 VUs, 6906 complete and 0 interrupted iterations
+running (1m00.2s), 0/5 VUs, 1742 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -379,43 +379,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     carbone_latency
-    ✓ 'p(95)<5000' p(95)=19.19
+    ✓ 'p(95)<5000' p(95)=58.70525
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=19.19ms
+    ✓ 'p(95)<5000' p(95)=58.7ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 39162   652.566909/s
-    checks_succeeded...: 100.00% 39162 out of 39162
-    checks_failed......: 0.00%   0 out of 39162
+    checks_total.......: 11948   198.999098/s
+    checks_succeeded...: 100.00% 11948 out of 11948
+    checks_failed......: 0.00%   0 out of 11948
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    carbone_latency................: avg=15.148444 min=11.124  med=14.474  max=135.595  p(90)=17.782  p(95)=19.19
+    carbone_latency................: avg=49.253327 min=39.983  med=48.196  max=142.298  p(90)=56.4989 p(95)=58.70525
 
     HTTP
-    http_req_duration..............: avg=15.14ms   min=11.12ms med=14.47ms max=135.59ms p(90)=17.78ms p(95)=19.19ms
-      { expected_response:true }...: avg=15.14ms   min=11.12ms med=14.47ms max=135.59ms p(90)=17.78ms p(95)=19.19ms
-    http_req_failed................: 0.00%  0 out of 19581
-    http_reqs......................: 19581  326.283454/s
+    http_req_duration..............: avg=49.25ms   min=39.98ms med=48.19ms max=142.29ms p(90)=56.49ms p(95)=58.7ms
+      { expected_response:true }...: avg=49.25ms   min=39.98ms med=48.19ms max=142.29ms p(90)=56.49ms p(95)=58.7ms
+    http_req_failed................: 0.00%  0 out of 5974
+    http_reqs......................: 5974   99.499549/s
 
     EXECUTION
-    iteration_duration.............: avg=15.3ms    min=11.2ms  med=14.63ms max=135.71ms p(90)=17.96ms p(95)=19.35ms
-    iterations.....................: 19581  326.283454/s
-    vus............................: 5      min=5          max=5
-    vus_max........................: 5      min=5          max=5
+    iteration_duration.............: avg=50.21ms   min=40.6ms  med=49.19ms max=144.85ms p(90)=57.43ms p(95)=59.49ms
+    iterations.....................: 5974   99.499549/s
+    vus............................: 5      min=5         max=5
+    vus_max........................: 5      min=5         max=5
 
     NETWORK
-    data_received..................: 360 MB 6.0 MB/s
-    data_sent......................: 6.2 MB 103 kB/s
+    data_received..................: 434 MB 7.2 MB/s
+    data_sent......................: 262 MB 4.4 MB/s
 
-running (1m00.0s), 0/5 VUs, 19581 complete and 0 interrupted iterations
+running (1m00.0s), 0/5 VUs, 5974 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -431,43 +431,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     carbone_html_latency
-    ✓ 'p(95)<5000' p(95)=20.8201
+    ✓ 'p(95)<5000' p(95)=20.8436
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=20.82ms
+    ✓ 'p(95)<5000' p(95)=20.84ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 33580   559.51309/s
-    checks_succeeded...: 100.00% 33580 out of 33580
-    checks_failed......: 0.00%   0 out of 33580
+    checks_total.......: 33298   554.788302/s
+    checks_succeeded...: 100.00% 33298 out of 33298
+    checks_failed......: 0.00%   0 out of 33298
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    carbone_html_latency...........: avg=17.562759 min=5.418  med=17.1085 max=76.28   p(90)=19.719  p(95)=20.8201
+    carbone_html_latency...........: avg=17.735802 min=7.682  med=17.292  max=87.718  p(90)=19.7774 p(95)=20.8436
 
     HTTP
-    http_req_duration..............: avg=17.56ms   min=5.41ms med=17.1ms  max=76.28ms p(90)=19.71ms p(95)=20.82ms
-      { expected_response:true }...: avg=17.56ms   min=5.41ms med=17.1ms  max=76.28ms p(90)=19.71ms p(95)=20.82ms
-    http_req_failed................: 0.00%  0 out of 16790
-    http_reqs......................: 16790  279.756545/s
+    http_req_duration..............: avg=17.73ms   min=7.68ms med=17.29ms max=87.71ms p(90)=19.77ms p(95)=20.84ms
+      { expected_response:true }...: avg=17.73ms   min=7.68ms med=17.29ms max=87.71ms p(90)=19.77ms p(95)=20.84ms
+    http_req_failed................: 0.00%  0 out of 16649
+    http_reqs......................: 16649  277.394151/s
 
     EXECUTION
-    iteration_duration.............: avg=17.85ms   min=5.6ms  med=17.36ms max=76.58ms p(90)=19.98ms p(95)=21.11ms
-    iterations.....................: 16790  279.756545/s
+    iteration_duration.............: avg=18ms      min=8.04ms med=17.53ms max=88ms    p(90)=20.04ms p(95)=21.14ms
+    iterations.....................: 16649  277.394151/s
     vus............................: 5      min=5          max=5
     vus_max........................: 5      min=5          max=5
 
     NETWORK
-    data_received..................: 509 MB 8.5 MB/s
+    data_received..................: 505 MB 8.4 MB/s
     data_sent......................: 73 MB  1.2 MB/s
 
-running (1m00.0s), 0/5 VUs, 16790 complete and 0 interrupted iterations
+running (1m00.0s), 0/5 VUs, 16649 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -479,43 +479,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     carbone_html_latency
-    ✓ 'p(95)<5000' p(95)=9.886
+    ✓ 'p(95)<5000' p(95)=9.566
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=9.88ms
+    ✓ 'p(95)<5000' p(95)=9.56ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 77278   1287.788523/s
-    checks_succeeded...: 100.00% 77278 out of 77278
-    checks_failed......: 0.00%   0 out of 77278
+    checks_total.......: 80378   1339.447262/s
+    checks_succeeded...: 100.00% 80378 out of 80378
+    checks_failed......: 0.00%   0 out of 80378
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    carbone_html_latency...........: avg=7.497235 min=5.277  med=7.117  max=76.885  p(90)=9.108  p(95)=9.886
+    carbone_html_latency...........: avg=7.288453 min=5.374  med=6.997  max=49.431  p(90)=8.4892 p(95)=9.566
 
     HTTP
-    http_req_duration..............: avg=7.49ms   min=5.27ms med=7.11ms max=76.88ms p(90)=9.1ms  p(95)=9.88ms
-      { expected_response:true }...: avg=7.49ms   min=5.27ms med=7.11ms max=76.88ms p(90)=9.1ms  p(95)=9.88ms
-    http_req_failed................: 0.00%  0 out of 38639
-    http_reqs......................: 38639  643.894261/s
+    http_req_duration..............: avg=7.28ms   min=5.37ms med=6.99ms max=49.43ms p(90)=8.48ms p(95)=9.56ms
+      { expected_response:true }...: avg=7.28ms   min=5.37ms med=6.99ms max=49.43ms p(90)=8.48ms p(95)=9.56ms
+    http_req_failed................: 0.00%  0 out of 40189
+    http_reqs......................: 40189  669.723631/s
 
     EXECUTION
-    iteration_duration.............: avg=7.75ms   min=5.49ms med=7.36ms max=78.94ms p(90)=9.41ms p(95)=10.19ms
-    iterations.....................: 38639  643.894261/s
+    iteration_duration.............: avg=7.45ms   min=5.48ms med=7.15ms max=49.63ms p(90)=8.74ms p(95)=9.77ms
+    iterations.....................: 40189  669.723631/s
     vus............................: 5      min=5          max=5
     vus_max........................: 5      min=5          max=5
 
     NETWORK
     data_received..................: 1.2 GB 20 MB/s
-    data_sent......................: 169 MB 2.8 MB/s
+    data_sent......................: 176 MB 2.9 MB/s
 
-running (1m00.0s), 0/5 VUs, 38639 complete and 0 interrupted iterations
+running (1m00.0s), 0/5 VUs, 40189 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -531,44 +531,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     gotenberg_latency
-    ✓ 'p(95)<5000' p(95)=620.62485
+    ✓ 'p(95)<5000' p(95)=629.242
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=620.62ms
+    ✓ 'p(95)<5000' p(95)=629.24ms
 
     http_req_failed
-    ✓ 'rate<0.01' rate=0.16%
+    ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 1204   19.952406/s
-    checks_succeeded...: 99.91% 1203 out of 1204
-    checks_failed......: 0.08%  1 out of 1204
+    checks_total.......: 1202    19.825259/s
+    checks_succeeded...: 100.00% 1202 out of 1202
+    checks_failed......: 0.00%   0 out of 1202
 
-    ✗ status is 200
-      ↳  99% — ✓ 601 / ✗ 1
+    ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    gotenberg_latency..............: avg=499.588264 min=85.052  med=405.83   max=792.313  p(90)=616.1239 p(95)=620.62485
+    gotenberg_latency..............: avg=501.640589 min=89.628  med=435.926  max=693.125  p(90)=621.106  p(95)=629.242
 
     HTTP
-    http_req_duration..............: avg=499.58ms   min=85.05ms med=405.83ms max=792.31ms p(90)=616.12ms p(95)=620.62ms
-      { expected_response:true }...: avg=499.46ms   min=85.05ms med=404.84ms max=792.31ms p(90)=616.12ms p(95)=620.65ms
-    http_req_failed................: 0.16% 1 out of 602
-    http_reqs......................: 602   9.976203/s
+    http_req_duration..............: avg=501.64ms   min=89.62ms med=435.92ms max=693.12ms p(90)=621.1ms  p(95)=629.24ms
+      { expected_response:true }...: avg=501.64ms   min=89.62ms med=435.92ms max=693.12ms p(90)=621.1ms  p(95)=629.24ms
+    http_req_failed................: 0.00% 0 out of 601
+    http_reqs......................: 601   9.912629/s
 
     EXECUTION
-    iteration_duration.............: avg=499.87ms   min=89.35ms med=405.98ms max=792.42ms p(90)=616.32ms p(95)=620.85ms
-    iterations.....................: 602   9.976203/s
+    iteration_duration.............: avg=501.85ms   min=91.99ms med=436.12ms max=693.34ms p(90)=621.26ms p(95)=629.36ms
+    iterations.....................: 601   9.912629/s
     vus............................: 5     min=5        max=5
     vus_max........................: 5     min=5        max=5
 
     NETWORK
-    data_received..................: 41 MB 671 kB/s
-    data_sent......................: 20 MB 332 kB/s
+    data_received..................: 41 MB 668 kB/s
+    data_sent......................: 20 MB 329 kB/s
 
-running (1m00.3s), 0/5 VUs, 602 complete and 0 interrupted iterations
+running (1m00.6s), 0/5 VUs, 601 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -584,43 +583,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     gotenberg_html_latency
-    ✓ 'p(95)<5000' p(95)=441.61775
+    ✓ 'p(95)<5000' p(95)=421.9454
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=441.61ms
+    ✓ 'p(95)<5000' p(95)=421.94ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 1596    26.48238/s
-    checks_succeeded...: 100.00% 1596 out of 1596
-    checks_failed......: 0.00%   0 out of 1596
+    checks_total.......: 1626    26.999801/s
+    checks_succeeded...: 100.00% 1626 out of 1626
+    checks_failed......: 0.00%   0 out of 1626
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    gotenberg_html_latency.........: avg=377.214195 min=188.497  med=374.53   max=661.117  p(90)=411.0838 p(95)=441.61775
+    gotenberg_html_latency.........: avg=369.832958 min=160.218  med=368.75   max=576.951  p(90)=397.9028 p(95)=421.9454
 
     HTTP
-    http_req_duration..............: avg=377.21ms   min=188.49ms med=374.53ms max=661.11ms p(90)=411.08ms p(95)=441.61ms
-      { expected_response:true }...: avg=377.21ms   min=188.49ms med=374.53ms max=661.11ms p(90)=411.08ms p(95)=441.61ms
-    http_req_failed................: 0.00%  0 out of 798
-    http_reqs......................: 798    13.24119/s
+    http_req_duration..............: avg=369.83ms   min=160.21ms med=368.75ms max=576.95ms p(90)=397.9ms  p(95)=421.94ms
+      { expected_response:true }...: avg=369.83ms   min=160.21ms med=368.75ms max=576.95ms p(90)=397.9ms  p(95)=421.94ms
+    http_req_failed................: 0.00%  0 out of 813
+    http_reqs......................: 813    13.4999/s
 
     EXECUTION
-    iteration_duration.............: avg=377.45ms   min=188.64ms med=374.71ms max=661.38ms p(90)=411.51ms p(95)=442.28ms
-    iterations.....................: 798    13.24119/s
+    iteration_duration.............: avg=370.01ms   min=160.36ms med=368.92ms max=577.07ms p(90)=398.03ms p(95)=422.09ms
+    iterations.....................: 813    13.4999/s
     vus............................: 5      min=5        max=5
     vus_max........................: 5      min=5        max=5
 
     NETWORK
-    data_received..................: 26 MB  436 kB/s
-    data_sent......................: 2.8 MB 47 kB/s
+    data_received..................: 27 MB  444 kB/s
+    data_sent......................: 2.9 MB 48 kB/s
 
-running (1m00.3s), 0/5 VUs, 798 complete and 0 interrupted iterations
+running (1m00.2s), 0/5 VUs, 813 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -632,43 +631,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     gotenberg_html_latency
-    ✓ 'p(95)<5000' p(95)=475.5374
+    ✓ 'p(95)<5000' p(95)=441.2624
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=475.53ms
+    ✓ 'p(95)<5000' p(95)=441.26ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
   █ TOTAL RESULTS
 
-    checks_total.......: 1618    26.861438/s
-    checks_succeeded...: 100.00% 1618 out of 1618
-    checks_failed......: 0.00%   0 out of 1618
+    checks_total.......: 1690    28.069365/s
+    checks_succeeded...: 100.00% 1690 out of 1690
+    checks_failed......: 0.00%   0 out of 1690
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    gotenberg_html_latency.........: avg=371.652607 min=204.798  med=354.512  max=730.895  p(90)=443.8012 p(95)=475.5374
+    gotenberg_html_latency.........: avg=355.624507 min=210.613  med=340.346  max=678.081  p(90)=423.898  p(95)=441.2624
 
     HTTP
-    http_req_duration..............: avg=371.65ms   min=204.79ms med=354.51ms max=730.89ms p(90)=443.8ms  p(95)=475.53ms
-      { expected_response:true }...: avg=371.65ms   min=204.79ms med=354.51ms max=730.89ms p(90)=443.8ms  p(95)=475.53ms
-    http_req_failed................: 0.00%  0 out of 809
-    http_reqs......................: 809    13.430719/s
+    http_req_duration..............: avg=355.62ms   min=210.61ms med=340.34ms max=678.08ms p(90)=423.89ms p(95)=441.26ms
+      { expected_response:true }...: avg=355.62ms   min=210.61ms med=340.34ms max=678.08ms p(90)=423.89ms p(95)=441.26ms
+    http_req_failed................: 0.00%  0 out of 845
+    http_reqs......................: 845    14.034682/s
 
     EXECUTION
-    iteration_duration.............: avg=371.89ms   min=204.94ms med=354.78ms max=731.03ms p(90)=443.93ms p(95)=475.68ms
-    iterations.....................: 809    13.430719/s
+    iteration_duration.............: avg=355.81ms   min=210.73ms med=340.47ms max=678.16ms p(90)=424.03ms p(95)=441.39ms
+    iterations.....................: 845    14.034682/s
     vus............................: 5      min=5        max=5
     vus_max........................: 5      min=5        max=5
 
     NETWORK
-    data_received..................: 27 MB  442 kB/s
-    data_sent......................: 2.9 MB 48 kB/s
+    data_received..................: 28 MB  462 kB/s
+    data_sent......................: 3.0 MB 50 kB/s
 
-running (1m00.2s), 0/5 VUs, 809 complete and 0 interrupted iterations
+running (1m00.2s), 0/5 VUs, 845 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -682,43 +681,43 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=549.95ms
+    ✓ 'p(95)<5000' p(95)=532.94ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
     pandoc_latency
-    ✓ 'p(95)<5000' p(95)=549.957
+    ✓ 'p(95)<5000' p(95)=532.9438
 
   █ TOTAL RESULTS
 
-    checks_total.......: 1142    18.909733/s
-    checks_succeeded...: 100.00% 1142 out of 1142
-    checks_failed......: 0.00%   0 out of 1142
+    checks_total.......: 1150    19.130006/s
+    checks_succeeded...: 100.00% 1150 out of 1150
+    checks_failed......: 0.00%   0 out of 1150
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    pandoc_latency.................: avg=526.937975 min=506.751  med=522.55   max=774.056  p(90)=534.473  p(95)=549.957
+    pandoc_latency.................: avg=521.948763 min=507.87   med=521.417  max=568.694  p(90)=529.2766 p(95)=532.9438
 
     HTTP
-    http_req_duration..............: avg=526.93ms   min=506.75ms med=522.54ms max=774.05ms p(90)=534.47ms p(95)=549.95ms
-      { expected_response:true }...: avg=526.93ms   min=506.75ms med=522.54ms max=774.05ms p(90)=534.47ms p(95)=549.95ms
-    http_req_failed................: 0.00% 0 out of 571
-    http_reqs......................: 571   9.454866/s
+    http_req_duration..............: avg=521.94ms   min=507.87ms med=521.41ms max=568.69ms p(90)=529.27ms p(95)=532.94ms
+      { expected_response:true }...: avg=521.94ms   min=507.87ms med=521.41ms max=568.69ms p(90)=529.27ms p(95)=532.94ms
+    http_req_failed................: 0.00% 0 out of 575
+    http_reqs......................: 575   9.565003/s
 
     EXECUTION
-    iteration_duration.............: avg=527.52ms   min=507.04ms med=523.09ms max=774.51ms p(90)=535.46ms p(95)=550.4ms
-    iterations.....................: 571   9.454866/s
+    iteration_duration.............: avg=522.37ms   min=508.2ms  med=521.89ms max=569.06ms p(90)=529.6ms  p(95)=533.33ms
+    iterations.....................: 575   9.565003/s
     vus............................: 5     min=5        max=5
     vus_max........................: 5     min=5        max=5
 
     NETWORK
-    data_received..................: 52 MB 862 kB/s
-    data_sent......................: 19 MB 311 kB/s
+    data_received..................: 52 MB 872 kB/s
+    data_sent......................: 19 MB 315 kB/s
 
-running (1m00.4s), 0/5 VUs, 571 complete and 0 interrupted iterations
+running (1m00.1s), 0/5 VUs, 575 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```
 
@@ -732,17 +731,17 @@ default ✓ [ 100% ] 5 VUs  1m0s
   █ THRESHOLDS
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=766.17ms
+    ✓ 'p(95)<5000' p(95)=777.01ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
 
     pandoc_html_latency
-    ✓ 'p(95)<5000' p(95)=766.174
+    ✓ 'p(95)<5000' p(95)=777.0178
 
   █ TOTAL RESULTS
 
-    checks_total.......: 820     13.581357/s
+    checks_total.......: 820     13.588338/s
     checks_succeeded...: 100.00% 820 out of 820
     checks_failed......: 0.00%   0 out of 820
 
@@ -750,17 +749,17 @@ default ✓ [ 100% ] 5 VUs  1m0s
     ✓ duration < 10s
 
     CUSTOM
-    pandoc_html_latency............: avg=734.28411 min=710.308  med=730.9985 max=810.604  p(90)=756.4396 p(95)=766.174
+    pandoc_html_latency............: avg=734.610066 min=705.262  med=725.277  max=1054.078 p(90)=746.4426 p(95)=777.0178
 
     HTTP
-    http_req_duration..............: avg=734.28ms  min=710.3ms  med=730.99ms max=810.6ms  p(90)=756.43ms p(95)=766.17ms
-      { expected_response:true }...: avg=734.28ms  min=710.3ms  med=730.99ms max=810.6ms  p(90)=756.43ms p(95)=766.17ms
+    http_req_duration..............: avg=734.61ms   min=705.26ms med=725.27ms max=1.05s    p(90)=746.44ms p(95)=777.01ms
+      { expected_response:true }...: avg=734.61ms   min=705.26ms med=725.27ms max=1.05s    p(90)=746.44ms p(95)=777.01ms
     http_req_failed................: 0.00%  0 out of 410
-    http_reqs......................: 410    6.790679/s
+    http_reqs......................: 410    6.794169/s
 
     EXECUTION
-    iteration_duration.............: avg=734.87ms  min=710.67ms med=731.58ms max=811.14ms p(90)=757.16ms p(95)=766.68ms
-    iterations.....................: 410    6.790679/s
+    iteration_duration.............: avg=735.06ms   min=705.69ms med=725.85ms max=1.05s    p(90)=746.8ms  p(95)=777.84ms
+    iterations.....................: 410    6.794169/s
     vus............................: 5      min=5        max=5
     vus_max........................: 5      min=5        max=5
 
@@ -768,6 +767,6 @@ default ✓ [ 100% ] 5 VUs  1m0s
     data_received..................: 50 MB  831 kB/s
     data_sent......................: 1.3 MB 22 kB/s
 
-running (1m00.4s), 0/5 VUs, 410 complete and 0 interrupted iterations
+running (1m00.3s), 0/5 VUs, 410 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
 ```

@@ -3,6 +3,9 @@ import { join } from 'node:path';
 
 import { TESTS, TOOLS } from './benchmarks.config.mjs';
 
+// Results with more failed requests than this are errors, not conversions, and are not reported
+export const MAX_FAILED_RATE = 0.01;
+
 const ENGINE_NAMES = { libreoffice: 'LibreOffice', chrome: 'Chrome', latex: 'LaTeX', ice: 'Carbone ICE' };
 
 const MONTHS = [
@@ -41,6 +44,7 @@ function threadsLong(r) {
 const threadsShort = (r) => `${r.threads ?? 'n/a'} (${r.engine})`;
 const conversionWords = (r) => r.conversion.replace('→', 'to');
 const engineName = (r) => ENGINE_NAMES[r.engine] ?? r.engine;
+const toolLabel = (r) => (r.chartTag ? `${r.tool} ${r.chartTag}` : r.tool);
 const chartLabel = (r) =>
   [`${shortName(r.tool)} ${conversionWords(r)}${r.chartTag ? ` (${r.chartTag})` : ''}`, threadsLong(r)]
     .filter(Boolean)
@@ -48,11 +52,15 @@ const chartLabel = (r) =>
 
 const escapeXml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-/** Successful results of the tests still declared in the config, sorted by throughput. */
+/**
+ * Successful results of the tests still declared in the config, sorted by throughput.
+ * Display settings (headline, chartTag) always come from the current config, not from the stored result.
+ */
 function measured(summary) {
-  const ids = new Set(TESTS.map((t) => t.id));
+  const tests = new Map(TESTS.map((t) => [t.id, t]));
   return Object.values(summary.tests ?? {})
-    .filter((r) => ids.has(r.id) && r.metrics && r.status !== 'failed')
+    .filter((r) => tests.has(r.id) && r.metrics && r.status !== 'failed' && r.metrics.failedRate < MAX_FAILED_RATE)
+    .map((r) => ({ ...r, headline: tests.get(r.id).headline !== false, chartTag: tests.get(r.id).chartTag }))
     .sort((a, b) => b.metrics.rps - a.metrics.rps);
 }
 
@@ -98,15 +106,15 @@ function conversionLeader(rows, conversion, icon, title) {
   const runnerUp = list.find((r) => r.tool !== best.tool);
   const bestText = `${ms(best.metrics.avg)}${best.threads ? ` (${threadsLong(best)})` : ''}`;
   return runnerUp
-    ? `- ${icon} **${title}**: ${best.tool} leads with ${bestText} vs ${ms(runnerUp.metrics.avg)} (${runnerUp.tool})`
-    : `- ${icon} **${title}**: ${best.tool} with ${bestText}`;
+    ? `- ${icon} **${title}**: ${toolLabel(best)} leads with ${bestText} vs ${ms(runnerUp.metrics.avg)} (${toolLabel(runnerUp)})`
+    : `- ${icon} **${title}**: ${toolLabel(best)} with ${bestText}`;
 }
 
 function insightsSection(rows) {
   const lines = [];
   const fastest = [...rows].sort((a, b) => a.metrics.avg - b.metrics.avg)[0];
   lines.push(
-    `- ⚡ **Fastest Overall**: ${fastest.tool}${fastest.threads ? ` with ${threadsLong(fastest)}` : ''} ` +
+    `- ⚡ **Fastest Overall**: ${toolLabel(fastest)}${fastest.threads ? ` with ${threadsLong(fastest)}` : ''} ` +
     `(${ms(fastest.metrics.avg)} avg for ${fastest.conversion.replace(' → ', '→')})`,
   );
 
@@ -120,7 +128,7 @@ function insightsSection(rows) {
   if (gains.length) {
     const { r, ratio } = gains[0];
     lines.push(
-      `- 🚀 **Best Scalability**: ${r.tool} gets ${ratio.toFixed(1)}x more throughput on ${r.conversion.replace(' → ', '→')} ` +
+      `- 🚀 **Best Scalability**: ${toolLabel(r)} gets ${ratio.toFixed(1)}x more throughput on ${r.conversion.replace(' → ', '→')} ` +
       `when going from 1 to ${threadsLong(r)}`,
     );
   }

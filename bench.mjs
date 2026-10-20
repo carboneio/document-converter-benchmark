@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
 import { SERVICES, TESTS } from './benchmarks.config.mjs';
-import { generateReport } from './report.mjs';
+import { MAX_FAILED_RATE, generateReport } from './report.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const RESULTS_DIR = join(ROOT, 'results');
@@ -208,13 +208,19 @@ async function waitUntilReady(test, timeoutSec) {
   throw new Error(`service not ready after ${timeoutSec}s: ${lastError?.cause?.code ?? lastError?.message}`);
 }
 
+/** Size of the body of the verification request, used to detect a k6 script that does not send the document. */
+async function requestBodyBytes(test) {
+  const { url, init } = test.verify(baseUrl(test.service));
+  return (await new Request(url, init).arrayBuffer()).byteLength;
+}
+
 async function verifyTest(test) {
   const result = await convertOnce(test);
   mkdirSync(OUTPUT_DIR, { recursive: true });
   const file = join(OUTPUT_DIR, `${test.id}.pdf`);
   writeFileSync(file, result.body);
   ok(`${test.id}: valid PDF (${(result.bytes / 1024).toFixed(1)} KB in ${result.ms}ms) -> output/${test.id}.pdf`);
-  return { status: result.status, bytes: result.bytes, ms: result.ms };
+  return { status: result.status, bytes: result.bytes, ms: result.ms, requestBytes: await requestBodyBytes(test) };
 }
 
 async function warmup(test, count) {
@@ -281,6 +287,7 @@ function extractMetrics(test, exported) {
     p95: latency['p(95)'],
     rps: m.http_reqs?.rate ?? 0,
     requests: m.http_reqs?.count ?? 0,
+    sentBytesPerRequest: m.http_reqs?.count ? (m.data_sent?.count ?? 0) / m.http_reqs.count : 0,
     failedRate: m.http_req_failed?.value ?? 0,
     checksRate: m.checks?.value ?? 0,
   };
@@ -383,8 +390,20 @@ async function processServices(tests, opts, { benchmark }) {
           record.duration = opts.duration;
           record.warmup = opts.warmup;
           record.metrics = extractMetrics(test, exported);
-          record.status = thresholdsPassed ? 'passed' : 'thresholds_failed';
           const m = record.metrics;
+          if (m.failedRate >= MAX_FAILED_RATE) {
+            throw new Error(
+              `${(m.failedRate * 100).toFixed(2)}% of the ${m.requests} requests failed during the load test ` +
+              `(see results/${test.id}.txt)`,
+            );
+          }
+          if (m.sentBytesPerRequest < record.verify.requestBytes / 2) {
+            throw new Error(
+              `k6 sends ${Math.round(m.sentBytesPerRequest)} bytes per request while the verification request ` +
+              `is ${record.verify.requestBytes} bytes: ${test.script} does not send the sample document`,
+            );
+          }
+          record.status = thresholdsPassed ? 'passed' : 'thresholds_failed';
           (thresholdsPassed ? ok : warn)(
             `${test.id}: avg=${m.avg.toFixed(2)}ms rps=${m.rps.toFixed(2)} failed=${(m.failedRate * 100).toFixed(2)}%` +
             (thresholdsPassed ? '' : ' (k6 thresholds failed)'),
