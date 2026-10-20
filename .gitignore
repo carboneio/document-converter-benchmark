@@ -2,6 +2,7 @@
 0perso/
 
 # Output files
+output/
 output*.pdf
 *.pdf
 !sample*.pdf

@@ -1,0 +1,43 @@
+  █ THRESHOLDS
+
+    http_req_duration
+    ✓ 'p(95)<5000' p(95)=549.95ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+    pandoc_latency
+    ✓ 'p(95)<5000' p(95)=549.957
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......: 1142    18.909733/s
+    checks_succeeded...: 100.00% 1142 out of 1142
+    checks_failed......: 0.00%   0 out of 1142
+
+    ✓ status is 200
+    ✓ duration < 10s
+
+    CUSTOM
+    pandoc_latency.................: avg=526.937975 min=506.751  med=522.55   max=774.056  p(90)=534.473  p(95)=549.957
+
+    HTTP
+    http_req_duration..............: avg=526.93ms   min=506.75ms med=522.54ms max=774.05ms p(90)=534.47ms p(95)=549.95ms
+      { expected_response:true }...: avg=526.93ms   min=506.75ms med=522.54ms max=774.05ms p(90)=534.47ms p(95)=549.95ms
+    http_req_failed................: 0.00% 0 out of 571
+    http_reqs......................: 571   9.454866/s
+
+    EXECUTION
+    iteration_duration.............: avg=527.52ms   min=507.04ms med=523.09ms max=774.51ms p(90)=535.46ms p(95)=550.4ms
+    iterations.....................: 571   9.454866/s
+    vus............................: 5     min=5        max=5
+    vus_max........................: 5     min=5        max=5
+
+    NETWORK
+    data_received..................: 52 MB 862 kB/s
+    data_sent......................: 19 MB 311 kB/s
+
+
+running (1m00.4s), 0/5 VUs, 571 complete and 0 interrupted iterations
+default ✓ [ 100% ] 5 VUs  1m0s

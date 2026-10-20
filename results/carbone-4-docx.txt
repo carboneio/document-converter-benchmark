@@ -1,0 +1,43 @@
+  █ THRESHOLDS
+
+    carbone_latency
+    ✓ 'p(95)<5000' p(95)=18.989
+
+    http_req_duration
+    ✓ 'p(95)<5000' p(95)=18.98ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......: 39162   652.517447/s
+    checks_succeeded...: 100.00% 39162 out of 39162
+    checks_failed......: 0.00%   0 out of 39162
+
+    ✓ status is 200
+    ✓ duration < 10s
+
+    CUSTOM
+    carbone_latency................: avg=15.149285 min=11.367  med=14.57   max=85.169  p(90)=17.73   p(95)=18.989
+
+    HTTP
+    http_req_duration..............: avg=15.14ms   min=11.36ms med=14.57ms max=85.16ms p(90)=17.73ms p(95)=18.98ms
+      { expected_response:true }...: avg=15.14ms   min=11.36ms med=14.57ms max=85.16ms p(90)=17.73ms p(95)=18.98ms
+    http_req_failed................: 0.00%  0 out of 19581
+    http_reqs......................: 19581  326.258724/s
+
+    EXECUTION
+    iteration_duration.............: avg=15.3ms    min=11.49ms med=14.73ms max=85.93ms p(90)=17.9ms  p(95)=19.18ms
+    iterations.....................: 19581  326.258724/s
+    vus............................: 5      min=5          max=5
+    vus_max........................: 5      min=5          max=5
+
+    NETWORK
+    data_received..................: 360 MB 6.0 MB/s
+    data_sent......................: 5.9 MB 98 kB/s
+
+
+running (1m00.0s), 0/5 VUs, 19581 complete and 0 interrupted iterations
+default ✓ [ 100% ] 5 VUs  1m0s

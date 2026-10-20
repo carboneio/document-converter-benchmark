@@ -1,0 +1,538 @@
+{
+  "tests": {
+    "jod-1-docx": {
+      "id": "jod-1-docx",
+      "service": "jod-1",
+      "tool": "Jod-converter",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "threads": 1,
+      "threadsUnit": "thread",
+      "command": "",
+      "image": {
+        "tag": "ghcr.io/jodconverter/jodconverter-examples:rest",
+        "id": "3213ae4931b8",
+        "digest": "sha256:3213ae4931b8",
+        "created": "2025-09-20",
+        "architecture": "amd64"
+      },
+      "date": "2026-10-20T13:36:51.151Z",
+      "verify": {
+        "status": 200,
+        "bytes": 62620,
+        "ms": 69
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 292.5363222979553,
+        "min": 74.625,
+        "med": 248.974,
+        "max": 1978.467,
+        "p90": 272.5958,
+        "p95": 279.9699,
+        "rps": 17.03961579598599,
+        "requests": 1027,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "jod-4-docx": {
+      "id": "jod-4-docx",
+      "service": "jod-4",
+      "tool": "Jod-converter",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "threads": 4,
+      "threadsUnit": "thread",
+      "command": "",
+      "image": {
+        "tag": "ghcr.io/jodconverter/jodconverter-examples:rest",
+        "id": "3213ae4931b8",
+        "digest": "sha256:3213ae4931b8",
+        "created": "2025-09-20",
+        "architecture": "amd64"
+      },
+      "date": "2026-10-20T13:37:59.804Z",
+      "verify": {
+        "status": 200,
+        "bytes": 62620,
+        "ms": 722
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 90.99823151810162,
+        "min": 57.328,
+        "med": 74.249,
+        "max": 1951.33,
+        "p90": 107.62080000000002,
+        "p95": 119.50239999999995,
+        "rps": 54.72294656180239,
+        "requests": 3287,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "collabora-1-docx": {
+      "id": "collabora-1-docx",
+      "service": "collabora-1",
+      "tool": "Collabora",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "threads": 1,
+      "threadsUnit": "thread",
+      "command": "",
+      "image": {
+        "tag": "collabora/code:latest",
+        "id": "bb8f3c9c5c90",
+        "digest": "sha256:bb8f3c9c5c90",
+        "created": "2026-10-09",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:39:07.010Z",
+      "verify": {
+        "status": 200,
+        "bytes": 69194,
+        "ms": 69
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 89.2120765779239,
+        "min": 72.829,
+        "med": 88.184,
+        "max": 176.687,
+        "p90": 93.65180000000001,
+        "p95": 97.64489999999999,
+        "rps": 55.642651738701375,
+        "requests": 3343,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "collabora-4-docx": {
+      "id": "collabora-4-docx",
+      "service": "collabora-4",
+      "tool": "Collabora",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "threads": 4,
+      "threadsUnit": "thread",
+      "command": "",
+      "image": {
+        "tag": "collabora/code:latest",
+        "id": "bb8f3c9c5c90",
+        "digest": "sha256:bb8f3c9c5c90",
+        "created": "2026-10-09",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:40:11.542Z",
+      "verify": {
+        "status": 200,
+        "bytes": 69194,
+        "ms": 70
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 79.06739681697594,
+        "min": 69.17,
+        "med": 78.402,
+        "max": 133.618,
+        "p90": 82.907,
+        "p95": 85.51219999999999,
+        "rps": 62.754247293182104,
+        "requests": 3770,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "carbone-1-docx": {
+      "id": "carbone-1-docx",
+      "service": "carbone-1",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "threads": 1,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 1",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:41:18.140Z",
+      "verify": {
+        "status": 200,
+        "bytes": 72253,
+        "ms": 45
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 42.31071246278191,
+        "min": 27.328,
+        "med": 41.201,
+        "max": 252.647,
+        "p90": 45.6976,
+        "p95": 48.352399999999996,
+        "rps": 117.43587581588213,
+        "requests": 7053,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "carbone-1-html": {
+      "id": "carbone-1-html",
+      "service": "carbone-1",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "HTML → PDF",
+      "engine": "chrome",
+      "threads": 1,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 1",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:42:18.937Z",
+      "verify": {
+        "status": 200,
+        "bytes": 29906,
+        "ms": 44
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 18.3558154506438,
+        "min": 8.526,
+        "med": 17.793,
+        "max": 66.771,
+        "p90": 20.9574,
+        "p95": 22.3696,
+        "rps": 267.8615119495275,
+        "requests": 16077,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "carbone-4-docx": {
+      "id": "carbone-4-docx",
+      "service": "carbone-4",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "threads": 4,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 4",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:43:29.802Z",
+      "verify": {
+        "status": 200,
+        "bytes": 72253,
+        "ms": 53
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 15.149284970124226,
+        "min": 11.367,
+        "med": 14.57,
+        "max": 85.169,
+        "p90": 17.73,
+        "p95": 18.989,
+        "rps": 326.2587236844039,
+        "requests": 19581,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "carbone-4-html": {
+      "id": "carbone-4-html",
+      "service": "carbone-4",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "HTML → PDF",
+      "engine": "chrome",
+      "threads": 4,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 4",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:44:30.562Z",
+      "verify": {
+        "status": 200,
+        "bytes": 29906,
+        "ms": 48
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 7.628093910433649,
+        "min": 5.168,
+        "med": 7.33,
+        "max": 89.214,
+        "p90": 9.172,
+        "p95": 9.899899999999999,
+        "rps": 632.968642430493,
+        "requests": 37983,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "gotenberg-1-html": {
+      "id": "gotenberg-1-html",
+      "service": "gotenberg-1",
+      "tool": "Gotenberg",
+      "version": "8.38.1",
+      "conversion": "HTML → PDF",
+      "engine": "chrome",
+      "threads": 1,
+      "threadsUnit": "concurrency",
+      "command": "gotenberg --chromium-auto-start=true",
+      "image": {
+        "tag": "gotenberg/gotenberg:8.38.1",
+        "id": "aa552cc115db",
+        "digest": "sha256:aa552cc115db",
+        "created": "2026-10-15",
+        "version": "8.38.1",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:45:41.654Z",
+      "verify": {
+        "status": 200,
+        "bytes": 32510,
+        "ms": 103
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 377.2141954887218,
+        "min": 188.497,
+        "med": 374.53,
+        "max": 661.117,
+        "p90": 411.0838,
+        "p95": 441.61775,
+        "rps": 13.241190136753618,
+        "requests": 798,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "gotenberg-1-docx": {
+      "id": "gotenberg-1-docx",
+      "service": "gotenberg-1",
+      "tool": "Gotenberg",
+      "version": "8.38.1",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "threads": 1,
+      "threadsUnit": "concurrency",
+      "command": "gotenberg --chromium-auto-start=true",
+      "image": {
+        "tag": "gotenberg/gotenberg:8.38.1",
+        "id": "aa552cc115db",
+        "digest": "sha256:aa552cc115db",
+        "created": "2026-10-15",
+        "version": "8.38.1",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:46:43.204Z",
+      "verify": {
+        "status": 200,
+        "bytes": 66963,
+        "ms": 543
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 499.58826411960155,
+        "min": 85.052,
+        "med": 405.83000000000004,
+        "max": 792.313,
+        "p90": 616.1238999999999,
+        "p95": 620.62485,
+        "rps": 9.976203109794628,
+        "requests": 602,
+        "failedRate": 0.0016611295681063123,
+        "checksRate": 0.9991694352159468
+      },
+      "status": "passed"
+    },
+    "gotenberg-4-html": {
+      "id": "gotenberg-4-html",
+      "service": "gotenberg-4",
+      "tool": "Gotenberg",
+      "version": "8.38.1",
+      "conversion": "HTML → PDF",
+      "engine": "chrome",
+      "threads": 4,
+      "threadsUnit": "concurrency",
+      "command": "gotenberg --chromium-max-concurrency=4 --chromium-auto-start=true",
+      "image": {
+        "tag": "gotenberg/gotenberg:8.38.1",
+        "id": "aa552cc115db",
+        "digest": "sha256:aa552cc115db",
+        "created": "2026-10-15",
+        "version": "8.38.1",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T13:47:52.880Z",
+      "verify": {
+        "status": 200,
+        "bytes": 32510,
+        "ms": 91
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 371.6526069221263,
+        "min": 204.798,
+        "med": 354.512,
+        "max": 730.895,
+        "p90": 443.8012,
+        "p95": 475.53739999999993,
+        "rps": 13.430718939578167,
+        "requests": 809,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "pandoc-html": {
+      "id": "pandoc-html",
+      "service": "pandoc",
+      "tool": "Pandoc",
+      "conversion": "HTML → PDF",
+      "engine": "latex",
+      "threads": null,
+      "threadsUnit": "thread",
+      "command": "",
+      "image": {
+        "tag": "pandoc-bench",
+        "id": "5aac982c2e7d",
+        "digest": "sha256:5aac982c2e7d",
+        "created": "2026-10-20",
+        "version": "3.11",
+        "architecture": "amd64"
+      },
+      "date": "2026-10-20T13:48:59.087Z",
+      "verify": {
+        "status": 200,
+        "bytes": 122198,
+        "ms": 674
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 734.2841097560981,
+        "min": 710.308,
+        "med": 730.9985,
+        "max": 810.604,
+        "p90": 756.4395999999999,
+        "p95": 766.174,
+        "rps": 6.790678703658111,
+        "requests": 410,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "pandoc-docx": {
+      "id": "pandoc-docx",
+      "service": "pandoc",
+      "tool": "Pandoc",
+      "conversion": "DOCX → PDF",
+      "engine": "latex",
+      "threads": null,
+      "threadsUnit": "thread",
+      "command": "",
+      "image": {
+        "tag": "pandoc-bench",
+        "id": "5aac982c2e7d",
+        "digest": "sha256:5aac982c2e7d",
+        "created": "2026-10-20",
+        "version": "3.11",
+        "architecture": "amd64"
+      },
+      "date": "2026-10-20T13:50:07.216Z",
+      "verify": {
+        "status": 200,
+        "bytes": 91018,
+        "ms": 537
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 526.9379754816122,
+        "min": 506.751,
+        "med": 522.55,
+        "max": 774.056,
+        "p90": 534.473,
+        "p95": 549.957,
+        "rps": 9.45486635099335,
+        "requests": 571,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    }
+  },
+  "environment": {
+    "platform": "darwin 24.6.0",
+    "arch": "arm64",
+    "cpu": "Apple M4 Max",
+    "cpus": 14,
+    "memoryGB": 36,
+    "docker": {
+      "version": "29.9.1",
+      "cpus": 14,
+      "memoryGB": 8
+    },
+    "k6": "v2.2.0",
+    "node": "v24.19.0"
+  },
+  "updatedAt": "2026-10-20T13:51:18.367Z"
+}

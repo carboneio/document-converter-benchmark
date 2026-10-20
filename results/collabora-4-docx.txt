@@ -1,0 +1,43 @@
+  █ THRESHOLDS
+
+    collabora_latency
+    ✓ 'p(95)<5000' p(95)=85.5122
+
+    http_req_duration
+    ✓ 'p(95)<5000' p(95)=85.51ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......: 7540    125.508495/s
+    checks_succeeded...: 100.00% 7540 out of 7540
+    checks_failed......: 0.00%   0 out of 7540
+
+    ✓ status is 200
+    ✓ duration < 10s
+
+    CUSTOM
+    collabora_latency..............: avg=79.067397 min=69.17   med=78.402  max=133.618  p(90)=82.907  p(95)=85.5122
+
+    HTTP
+    http_req_duration..............: avg=79.06ms   min=69.17ms med=78.4ms  max=133.61ms p(90)=82.9ms  p(95)=85.51ms
+      { expected_response:true }...: avg=79.06ms   min=69.17ms med=78.4ms  max=133.61ms p(90)=82.9ms  p(95)=85.51ms
+    http_req_failed................: 0.00%  0 out of 3770
+    http_reqs......................: 3770   62.754247/s
+
+    EXECUTION
+    iteration_duration.............: avg=79.63ms   min=69.56ms med=78.97ms max=133.92ms p(90)=83.48ms p(95)=86.26ms
+    iterations.....................: 3770   62.754247/s
+    vus............................: 5      min=5         max=5
+    vus_max........................: 5      min=5         max=5
+
+    NETWORK
+    data_received..................: 262 MB 4.4 MB/s
+    data_sent......................: 125 MB 2.1 MB/s
+
+
+running (1m00.1s), 0/5 VUs, 3770 complete and 0 interrupted iterations
+default ✓ [ 100% ] 5 VUs  1m0s

@@ -1,0 +1,14 @@
+{
+  "name": "document-converter-benchmark",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "bench": "node bench.mjs run",
+    "bench:verify": "node bench.mjs verify",
+    "bench:report": "node bench.mjs report",
+    "bench:list": "node bench.mjs list"
+  }
+}

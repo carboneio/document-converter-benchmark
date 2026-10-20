@@ -1,0 +1,44 @@
+  █ THRESHOLDS
+
+    gotenberg_latency
+    ✓ 'p(95)<5000' p(95)=620.62485
+
+    http_req_duration
+    ✓ 'p(95)<5000' p(95)=620.62ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.16%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......: 1204   19.952406/s
+    checks_succeeded...: 99.91% 1203 out of 1204
+    checks_failed......: 0.08%  1 out of 1204
+
+    ✗ status is 200
+      ↳  99% — ✓ 601 / ✗ 1
+    ✓ duration < 10s
+
+    CUSTOM
+    gotenberg_latency..............: avg=499.588264 min=85.052  med=405.83   max=792.313  p(90)=616.1239 p(95)=620.62485
+
+    HTTP
+    http_req_duration..............: avg=499.58ms   min=85.05ms med=405.83ms max=792.31ms p(90)=616.12ms p(95)=620.62ms
+      { expected_response:true }...: avg=499.46ms   min=85.05ms med=404.84ms max=792.31ms p(90)=616.12ms p(95)=620.65ms
+    http_req_failed................: 0.16% 1 out of 602
+    http_reqs......................: 602   9.976203/s
+
+    EXECUTION
+    iteration_duration.............: avg=499.87ms   min=89.35ms med=405.98ms max=792.42ms p(90)=616.32ms p(95)=620.85ms
+    iterations.....................: 602   9.976203/s
+    vus............................: 5     min=5        max=5
+    vus_max........................: 5     min=5        max=5
+
+    NETWORK
+    data_received..................: 41 MB 671 kB/s
+    data_sent......................: 20 MB 332 kB/s
+
+
+running (1m00.3s), 0/5 VUs, 602 complete and 0 interrupted iterations
+default ✓ [ 100% ] 5 VUs  1m0s

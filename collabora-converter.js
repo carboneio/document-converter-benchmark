@@ -6,8 +6,8 @@ import { sleep } from 'k6';
 // --- Load options ---
 // Adjust vus/duration as you like
 export const options = {
-  vus: 5,              // number of concurrent "virtual users"
-  duration: '1m',      // how long to run the test
+  vus: Number(__ENV.VUS || 5),           // number of concurrent "virtual users"
+  duration: __ENV.DURATION || '1m',     // how long to run the test
   thresholds: {
     http_req_duration: ['p(95)<5000'],        // 95% of requests < 5s
     http_req_failed: ['rate<0.01'],           // < 1% failures
@@ -18,7 +18,8 @@ export const options = {
 // Custom metric to track collabora latency explicitly
 const collaboraLatency = new Trend('collabora_latency');
 
-const url = 'http://localhost:9980/cool/convert-to/pdf';
+const BASE_URL = __ENV.BASE_URL || 'http://localhost:9980';
+const url = `${BASE_URL}/cool/convert-to/pdf`;
 // k6 reads the file once at init time and reuses the buffer
 const fileData = open('./sample.docx', 'b');
 

@@ -1,131 +1,118 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1005" height="724">
-  <rect width="1005" height="724" x="0" y="0" fill="#FFFFFF" id="background"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1005" height="866">
+  <rect width="1005" height="866" x="0" y="0" fill="#FFFFFF" id="background"/>
   <g id="viz">
-    <g transform="translate(0,0)">
-      <g transform="translate(250,20)">
-        <g class="bars">
-          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="5.998217468805706" height="50" width="515.8606666666666" fill="#A644C5"/>
-          <rect id="bar - Carbone DOCX to PDF / 4 threads" x="0" y="68.10952663893848" height="50" width="291.18441666666666" fill="#A644C5"/>
-          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="130.22083580907125" height="50" width="198.77058333333335" fill="#A644C5"/>
-          <rect id="bar - Carbone DOCX to PDF / 1 thread" x="0" y="192.332144979204" height="50" width="109.15441666666666" fill="#A644C5"/>
-          <rect id="bar - Collabora DOCX to PDF / 1 thread" x="0" y="254.4434541493368" height="50" width="66.24475000000001" fill="#ff7f0e"/>
-          <rect id="bar - Collabora DOCX to PDF / 4 threads" x="0" y="316.55476331946954" height="50" width="64.08291666666666" fill="#ff7f0e"/>
-          <rect id="bar - Jod DOCX to PDF / 4 threads" x="0" y="378.6660724896023" height="50" width="48.90466666666667" fill="#d62728"/>
-          <rect id="bar - Gotenberg HTML to PDF / 1 concurrency" x="0" y="440.77738165973506" height="50" width="34.334999999999994" fill="#358BBA"/>
-          <rect id="bar - Gotenberg HTML to PDF / 4 concurrency" x="0" y="502.88869082986787" height="50" width="32.809" fill="#358BBA"/>
-          <rect id="bar - Jod DOCX to PDF / 1 thread" x="0" y="565.0000000000006" height="50" width="14.669583333333332" fill="#d62728"/>
-          <rect id="bar - Gotenberg DOCX to PDF / 1 concurrency" x="0" y="627.1113091701334" height="50" width="6.957833333333333" fill="#358BBA"/>
-        </g>
-        <g id="xAxis" transform="translate(0,684.2238550207969)" fill="none" font-size="12" font-family="sans-serif" text-anchor="middle">
-          <path class="domain" stroke="currentColor" d="M0,6V0H545V6"/>
-          <g class="tick" opacity="1" transform="translate(0.0,0)">
+    <g transform="translate(250,20)">
+      <g class="bars">
+          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="6" height="50" width="492.81130017802667" fill="#A644C5"/>
+          <rect id="bar - Carbone DOCX to PDF / 4 threads" x="0" y="68" height="50" width="254.0157205828573" fill="#A644C5"/>
+          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="130" height="50" width="208.54932001784638" fill="#A644C5"/>
+          <rect id="bar - Carbone DOCX to PDF / 1 thread" x="0" y="192" height="50" width="91.43221759950823" fill="#A644C5"/>
+          <rect id="bar - Collabora DOCX to PDF / 4 threads" x="0" y="254" height="50" width="48.85866396397749" fill="#ff7f0e"/>
+          <rect id="bar - Collabora DOCX to PDF / 1 thread" x="0" y="316" height="50" width="43.321778853703215" fill="#ff7f0e"/>
+          <rect id="bar - Jod DOCX to PDF / 4 threads" x="0" y="378" height="50" width="42.605722680260435" fill="#d62728"/>
+          <rect id="bar - Jod DOCX to PDF / 1 thread" x="0" y="440" height="50" width="13.266558012589092" fill="#d62728"/>
+          <rect id="bar - Gotenberg HTML to PDF / 4 concurrency" x="0" y="502" height="50" width="10.456774031528715" fill="#358BBA"/>
+          <rect id="bar - Gotenberg HTML to PDF / 1 concurrency" x="0" y="564" height="50" width="10.309212320758174" fill="#358BBA"/>
+          <rect id="bar - Gotenberg DOCX to PDF / 1 concurrency" x="0" y="626" height="50" width="7.767186706911532" fill="#358BBA"/>
+          <rect id="bar - Pandoc DOCX to PDF" x="0" y="688" height="50" width="7.361288801844823" fill="#2ca02c"/>
+          <rect id="bar - Pandoc HTML to PDF" x="0" y="750" height="50" width="5.287028419276672" fill="#2ca02c"/>
+      </g>
+      <g id="xAxis" transform="translate(0,806)" fill="none" font-size="12" font-family="sans-serif" text-anchor="middle">
+        <path class="domain" stroke="currentColor" d="M0,6V0H545V6"/>
+          <g class="tick" opacity="1" transform="translate(0,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">0</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(45.416666666666664,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">50</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(90.83333333333333,0)">
+          <g class="tick" opacity="1" transform="translate(77.85714285714285,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">100</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(136.25,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">150</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(181.66666666666666,0)">
+          <g class="tick" opacity="1" transform="translate(155.7142857142857,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">200</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(227.08333333333334,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">250</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(272.5,0)">
+          <g class="tick" opacity="1" transform="translate(233.57142857142856,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">300</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(317.9166666666667,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">350</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(363.3333333333333,0)">
+          <g class="tick" opacity="1" transform="translate(311.4285714285714,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">400</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(408.75,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">450</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(454.1666666666667,0)">
+          <g class="tick" opacity="1" transform="translate(389.2857142857143,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">500</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(499.5833333333333,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">550</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(545.0,0)">
+          <g class="tick" opacity="1" transform="translate(467.1428571428571,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">600</text>
           </g>
-          <text font-family="Arial, sans-serif" font-size="12" x="545" dy="-5" fill="black" font-weight="bold" text-anchor="end">RPS</text>
-        </g>
-        <g id="yAxis" transform="translate(0,0)" fill="none" font-size="10" font-family="sans-serif" text-anchor="end">
-          <path class="domain" stroke="currentColor" d="M0,0V684.2238550207969"/>
-          <g class="tick" opacity="1" transform="translate(0,31.554763319469206)">
+          <g class="tick" opacity="1" transform="translate(545,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">700</text>
+          </g>
+        <text font-family="Arial, sans-serif" font-size="12" x="545" dy="-5" fill="black" font-weight="bold" text-anchor="end">RPS</text>
+      </g>
+      <g id="yAxis" fill="none" font-size="10" font-family="sans-serif" text-anchor="end">
+        <path class="domain" stroke="currentColor" d="M0,0V806"/>
+          <g class="tick" opacity="1" transform="translate(0,31)">
             <line stroke="currentColor" x2="-6"/>
             <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone HTML to PDF / 4 threads</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,93.66607248960197)">
+          <g class="tick" opacity="1" transform="translate(0,93)">
             <line stroke="currentColor" x2="-6"/>
             <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone DOCX to PDF / 4 threads</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,155.77738165973474)">
+          <g class="tick" opacity="1" transform="translate(0,155)">
             <line stroke="currentColor" x2="-6"/>
             <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone HTML to PDF / 1 thread</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,217.8886908298675)">
+          <g class="tick" opacity="1" transform="translate(0,217)">
             <line stroke="currentColor" x2="-6"/>
             <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone DOCX to PDF / 1 thread</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,280.0000000000003)">
+          <g class="tick" opacity="1" transform="translate(0,279)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; ">Collabora DOCX to PDF / 1 thread</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Collabora DOCX to PDF / 4 threads</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,342.11130917013304)">
+          <g class="tick" opacity="1" transform="translate(0,341)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; ">Collabora DOCX to PDF / 4 threads</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Collabora DOCX to PDF / 1 thread</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,404.2226183402658)">
+          <g class="tick" opacity="1" transform="translate(0,403)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; ">Jod DOCX to PDF / 4 threads</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Jod DOCX to PDF / 4 threads</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,466.33392751039855)">
+          <g class="tick" opacity="1" transform="translate(0,465)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; ">Gotenberg HTML to PDF / 1 concurrency</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Jod DOCX to PDF / 1 thread</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,528.4452366805314)">
+          <g class="tick" opacity="1" transform="translate(0,527)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; ">Gotenberg HTML to PDF / 4 concurrency</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Gotenberg HTML to PDF / 4 concurrency</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,590.5565458506641)">
+          <g class="tick" opacity="1" transform="translate(0,589)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; ">Jod DOCX to PDF / 1 thread</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Gotenberg HTML to PDF / 1 concurrency</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(0,652.6678550207969)">
+          <g class="tick" opacity="1" transform="translate(0,651)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; ">Gotenberg DOCX to PDF / 1 concurrency</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Gotenberg DOCX to PDF / 1 concurrency</text>
           </g>
-        </g>
+          <g class="tick" opacity="1" transform="translate(0,713)">
+            <line stroke="currentColor" x2="-6"/>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Pandoc DOCX to PDF</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(0,775)">
+            <line stroke="currentColor" x2="-6"/>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Pandoc HTML to PDF</text>
+          </g>
       </g>
-      <text y="4" x="4" style="font-family: Arial, sans-serif; font-size: 12px; fill: black; font-weight: bold; dominant-baseline: hanging;"/>
     </g>
   </g>
   <g id="legend" transform="translate(805,20)">
     <g transform="translate(5,0)">
-      <g class="legendColor" transform="translate(0,0)">
+      <g class="legendColor">
         <g class="legendCells" transform="translate(0,15.5)">
           <g class="cell" transform="translate(0, 0)">
             <rect class="swatch" height="15" width="15" style="fill: #A644C5;"/>
@@ -134,13 +121,13 @@
             </text>
           </g>
           <g class="cell" transform="translate(0, 20.5)">
-            <rect class="swatch" height="15" width="15" style="fill: rgb(255, 127, 14);"/>
+            <rect class="swatch" height="15" width="15" style="fill: #ff7f0e;"/>
             <text class="label" transform="translate( 20, 12.5)" font-family="&quot;Arial&quot;, sans-serif" font-size="12px">
               <tspan x="0" dy="0em" style="">Collabora</tspan>
             </text>
           </g>
           <g class="cell" transform="translate(0, 41)">
-            <rect class="swatch" height="15" width="15" style="fill: rgb(214, 39, 40);"/>
+            <rect class="swatch" height="15" width="15" style="fill: #d62728;"/>
             <text class="label" transform="translate( 20, 12.5)" font-family="&quot;Arial&quot;, sans-serif" font-size="12px">
               <tspan x="0" dy="0em" style="">Jod</tspan>
             </text>
@@ -149,6 +136,12 @@
             <rect class="swatch" height="15" width="15" style="fill: #358BBA;"/>
             <text class="label" transform="translate( 20, 12.5)" font-family="&quot;Arial&quot;, sans-serif" font-size="12px">
               <tspan x="0" dy="0em" style="">Gotenberg</tspan>
+            </text>
+          </g>
+          <g class="cell" transform="translate(0, 82)">
+            <rect class="swatch" height="15" width="15" style="fill: #2ca02c;"/>
+            <text class="label" transform="translate( 20, 12.5)" font-family="&quot;Arial&quot;, sans-serif" font-size="12px">
+              <tspan x="0" dy="0em" style="">Pandoc</tspan>
             </text>
           </g>
         </g>
