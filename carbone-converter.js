@@ -20,6 +20,8 @@ const carboneLatency = new Trend('carbone_latency');
 
 const BASE_URL = __ENV.BASE_URL || 'http://localhost:4000';
 const url = `${BASE_URL}/render/template?download=true`;
+// "L" = LibreOffice, "I" = Carbone ICE
+const CONVERTER = __ENV.CONVERTER || 'L';
 // k6 reads the file once at init time and reuses the buffer
 const fileData = open('./sample.docx', 'b');
 
@@ -32,6 +34,7 @@ export default function () {
   const payload = JSON.stringify({
     data: {}, //  Carbone requirements
     template: DocxBase64,
+    converter: CONVERTER,
     convertTo: 'pdf'
   });
 

@@ -3,19 +3,19 @@
   <g id="viz">
     <g transform="translate(250,20)">
       <g class="bars">
-          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="6" height="50" width="492.81130017802667" fill="#A644C5"/>
-          <rect id="bar - Carbone DOCX to PDF / 4 threads" x="0" y="68" height="50" width="254.0157205828573" fill="#A644C5"/>
-          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="130" height="50" width="208.54932001784638" fill="#A644C5"/>
-          <rect id="bar - Carbone DOCX to PDF / 1 thread" x="0" y="192" height="50" width="91.43221759950823" fill="#A644C5"/>
-          <rect id="bar - Collabora DOCX to PDF / 4 threads" x="0" y="254" height="50" width="48.85866396397749" fill="#ff7f0e"/>
-          <rect id="bar - Collabora DOCX to PDF / 1 thread" x="0" y="316" height="50" width="43.321778853703215" fill="#ff7f0e"/>
-          <rect id="bar - Jod DOCX to PDF / 4 threads" x="0" y="378" height="50" width="42.605722680260435" fill="#d62728"/>
-          <rect id="bar - Jod DOCX to PDF / 1 thread" x="0" y="440" height="50" width="13.266558012589092" fill="#d62728"/>
-          <rect id="bar - Gotenberg HTML to PDF / 4 concurrency" x="0" y="502" height="50" width="10.456774031528715" fill="#358BBA"/>
-          <rect id="bar - Gotenberg HTML to PDF / 1 concurrency" x="0" y="564" height="50" width="10.309212320758174" fill="#358BBA"/>
-          <rect id="bar - Gotenberg DOCX to PDF / 1 concurrency" x="0" y="626" height="50" width="7.767186706911532" fill="#358BBA"/>
-          <rect id="bar - Pandoc DOCX to PDF" x="0" y="688" height="50" width="7.361288801844823" fill="#2ca02c"/>
-          <rect id="bar - Pandoc HTML to PDF" x="0" y="750" height="50" width="5.287028419276672" fill="#2ca02c"/>
+          <rect id="bar - Carbone DOCX to PDF (ICE) / 4 threads" x="0" y="6" height="50" width="510.9181263694527" fill="#A644C5"/>
+          <rect id="bar - Carbone DOCX to PDF (ICE) / 1 thread" x="0" y="68" height="50" width="471.86060683278305" fill="#A644C5"/>
+          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="130" height="50" width="116.9741241350502" fill="#A644C5"/>
+          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="192" height="50" width="50.822438976430504" fill="#A644C5"/>
+          <rect id="bar - Collabora DOCX to PDF / 4 threads" x="0" y="254" height="50" width="11.400354924928083" fill="#ff7f0e"/>
+          <rect id="bar - Collabora DOCX to PDF / 1 thread" x="0" y="316" height="50" width="10.108415065864083" fill="#ff7f0e"/>
+          <rect id="bar - Jod DOCX to PDF / 4 threads" x="0" y="378" height="50" width="9.941335292060767" fill="#d62728"/>
+          <rect id="bar - Jod DOCX to PDF / 1 thread" x="0" y="440" height="50" width="3.095530202937455" fill="#d62728"/>
+          <rect id="bar - Gotenberg HTML to PDF / 4 concurrency" x="0" y="502" height="50" width="2.439913940690034" fill="#358BBA"/>
+          <rect id="bar - Gotenberg HTML to PDF / 1 concurrency" x="0" y="564" height="50" width="2.4054828748435737" fill="#358BBA"/>
+          <rect id="bar - Gotenberg DOCX to PDF / 1 concurrency" x="0" y="626" height="50" width="1.8123435649460242" fill="#358BBA"/>
+          <rect id="bar - Pandoc DOCX to PDF" x="0" y="688" height="50" width="1.717634053763792" fill="#2ca02c"/>
+          <rect id="bar - Pandoc HTML to PDF" x="0" y="750" height="50" width="1.2336399644978902" fill="#2ca02c"/>
       </g>
       <g id="xAxis" transform="translate(0,806)" fill="none" font-size="12" font-family="sans-serif" text-anchor="middle">
         <path class="domain" stroke="currentColor" d="M0,6V0H545V6"/>
@@ -23,33 +23,53 @@
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">0</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(77.85714285714285,0)">
+          <g class="tick" opacity="1" transform="translate(45.416666666666664,0)">
             <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">100</text>
+            <text fill="currentColor" y="9" dy="0.71em">250</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(155.7142857142857,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">200</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(233.57142857142856,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">300</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(311.4285714285714,0)">
-            <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">400</text>
-          </g>
-          <g class="tick" opacity="1" transform="translate(389.2857142857143,0)">
+          <g class="tick" opacity="1" transform="translate(90.83333333333333,0)">
             <line stroke="currentColor" y2="6"/>
             <text fill="currentColor" y="9" dy="0.71em">500</text>
           </g>
-          <g class="tick" opacity="1" transform="translate(467.1428571428571,0)">
+          <g class="tick" opacity="1" transform="translate(136.25,0)">
             <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">600</text>
+            <text fill="currentColor" y="9" dy="0.71em">750</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(181.66666666666666,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">1000</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(227.08333333333334,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">1250</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(272.5,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">1500</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(317.9166666666667,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">1750</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(363.3333333333333,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">2000</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(408.75,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">2250</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(454.1666666666667,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">2500</text>
+          </g>
+          <g class="tick" opacity="1" transform="translate(499.5833333333333,0)">
+            <line stroke="currentColor" y2="6"/>
+            <text fill="currentColor" y="9" dy="0.71em">2750</text>
           </g>
           <g class="tick" opacity="1" transform="translate(545,0)">
             <line stroke="currentColor" y2="6"/>
-            <text fill="currentColor" y="9" dy="0.71em">700</text>
+            <text fill="currentColor" y="9" dy="0.71em">3000</text>
           </g>
         <text font-family="Arial, sans-serif" font-size="12" x="545" dy="-5" fill="black" font-weight="bold" text-anchor="end">RPS</text>
       </g>
@@ -57,19 +77,19 @@
         <path class="domain" stroke="currentColor" d="M0,0V806"/>
           <g class="tick" opacity="1" transform="translate(0,31)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone HTML to PDF / 4 threads</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone DOCX to PDF (ICE) / 4 threads</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,93)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone DOCX to PDF / 4 threads</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone DOCX to PDF (ICE) / 1 thread</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,155)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone HTML to PDF / 1 thread</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone HTML to PDF / 4 threads</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,217)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone DOCX to PDF / 1 thread</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">Carbone HTML to PDF / 1 thread</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,279)">
             <line stroke="currentColor" x2="-6"/>

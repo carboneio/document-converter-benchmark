@@ -203,6 +203,7 @@
       "version": "5.16.0",
       "conversion": "HTML → PDF",
       "engine": "chrome",
+      "headline": true,
       "threads": 1,
       "threadsUnit": "thread",
       "command": "webserver -s -f 1",
@@ -213,24 +214,24 @@
         "created": "2026-10-20",
         "architecture": "arm64"
       },
-      "date": "2026-10-20T13:42:18.937Z",
+      "date": "2026-10-20T22:14:26.170Z",
       "verify": {
         "status": 200,
         "bytes": 29906,
-        "ms": 44
+        "ms": 43
       },
       "vus": 5,
       "duration": "1m",
       "warmup": 10,
       "metrics": {
-        "avg": 18.3558154506438,
-        "min": 8.526,
-        "med": 17.793,
-        "max": 66.771,
-        "p90": 20.9574,
-        "p95": 22.3696,
-        "rps": 267.8615119495275,
-        "requests": 16077,
+        "avg": 17.56275914234675,
+        "min": 5.418,
+        "med": 17.1085,
+        "max": 76.28,
+        "p90": 19.719,
+        "p95": 20.8201,
+        "rps": 279.75654482438813,
+        "requests": 16790,
         "failedRate": 0,
         "checksRate": 1
       },
@@ -283,6 +284,7 @@
       "version": "5.16.0",
       "conversion": "HTML → PDF",
       "engine": "chrome",
+      "headline": true,
       "threads": 4,
       "threadsUnit": "thread",
       "command": "webserver -s -f 4",
@@ -293,24 +295,24 @@
         "created": "2026-10-20",
         "architecture": "arm64"
       },
-      "date": "2026-10-20T13:44:30.562Z",
+      "date": "2026-10-20T22:17:40.425Z",
       "verify": {
         "status": 200,
         "bytes": 29906,
-        "ms": 48
+        "ms": 50
       },
       "vus": 5,
       "duration": "1m",
       "warmup": 10,
       "metrics": {
-        "avg": 7.628093910433649,
-        "min": 5.168,
-        "med": 7.33,
-        "max": 89.214,
-        "p90": 9.172,
-        "p95": 9.899899999999999,
-        "rps": 632.968642430493,
-        "requests": 37983,
+        "avg": 7.497234943968562,
+        "min": 5.277,
+        "med": 7.117,
+        "max": 76.885,
+        "p90": 9.108,
+        "p95": 9.886,
+        "rps": 643.8942612938544,
+        "requests": 38639,
         "failedRate": 0,
         "checksRate": 1
       },
@@ -518,6 +520,176 @@
         "checksRate": 1
       },
       "status": "passed"
+    },
+    "carbone-1-docx-ice": {
+      "id": "carbone-1-docx-ice",
+      "service": "carbone-1",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "DOCX → PDF",
+      "engine": "ice",
+      "variant": "ice",
+      "headline": true,
+      "chartTag": "ICE",
+      "threads": 1,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 1",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T22:12:16.955Z",
+      "verify": {
+        "status": 200,
+        "bytes": 53076,
+        "ms": 28
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 1.8353973744489789,
+        "min": 0.809,
+        "med": 1.707,
+        "max": 30.638,
+        "p90": 2.248,
+        "p95": 2.851399999999993,
+        "rps": 2597.3978357767874,
+        "requests": 155853,
+        "failedRate": 1,
+        "checksRate": 0.5
+      },
+      "status": "thresholds_failed"
+    },
+    "carbone-1-docx-libreoffice": {
+      "id": "carbone-1-docx-libreoffice",
+      "service": "carbone-1",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "variant": "libreoffice",
+      "headline": false,
+      "threads": 1,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 1",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T22:13:20.313Z",
+      "verify": {
+        "status": 200,
+        "bytes": 72253,
+        "ms": 98
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 43.19122241529105,
+        "min": 22.499,
+        "med": 41.7525,
+        "max": 276.524,
+        "p90": 48.0005,
+        "p95": 51.86924999999999,
+        "rps": 115.02824538053163,
+        "requests": 6906,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
+    },
+    "carbone-4-docx-ice": {
+      "id": "carbone-4-docx-ice",
+      "service": "carbone-4",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "DOCX → PDF",
+      "engine": "ice",
+      "variant": "ice",
+      "headline": true,
+      "chartTag": "ICE",
+      "threads": 4,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 4",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T22:15:34.186Z",
+      "verify": {
+        "status": 200,
+        "bytes": 53076,
+        "ms": 27
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 1.6905956623507505,
+        "min": 0.782,
+        "med": 1.576,
+        "max": 33.896,
+        "p90": 2.092,
+        "p95": 2.61,
+        "rps": 2812.3933561621247,
+        "requests": 168755,
+        "failedRate": 1,
+        "checksRate": 0.5
+      },
+      "status": "thresholds_failed"
+    },
+    "carbone-4-docx-libreoffice": {
+      "id": "carbone-4-docx-libreoffice",
+      "service": "carbone-4",
+      "tool": "Carbone",
+      "version": "5.16.0",
+      "conversion": "DOCX → PDF",
+      "engine": "libreoffice",
+      "variant": "libreoffice",
+      "headline": false,
+      "threads": 4,
+      "threadsUnit": "thread",
+      "command": "webserver -s -f 4",
+      "image": {
+        "tag": "carbone/carbone-ee:full-5.16.0",
+        "id": "9cc31ce7e861",
+        "digest": "sha256:9cc31ce7e861",
+        "created": "2026-10-20",
+        "architecture": "arm64"
+      },
+      "date": "2026-10-20T22:16:34.653Z",
+      "verify": {
+        "status": 200,
+        "bytes": 72253,
+        "ms": 71
+      },
+      "vus": 5,
+      "duration": "1m",
+      "warmup": 10,
+      "metrics": {
+        "avg": 15.14844400183859,
+        "min": 11.124,
+        "med": 14.474,
+        "max": 135.595,
+        "p90": 17.782,
+        "p95": 19.19,
+        "rps": 326.28345448945686,
+        "requests": 19581,
+        "failedRate": 0,
+        "checksRate": 1
+      },
+      "status": "passed"
     }
   },
   "environment": {
@@ -534,5 +706,5 @@
     "k6": "v2.2.0",
     "node": "v24.19.0"
   },
-  "updatedAt": "2026-10-20T13:51:18.367Z"
+  "updatedAt": "2026-10-20T22:18:45.847Z"
 }

@@ -76,12 +76,27 @@ const collaboraDocx = {
   verify: multipart('/cool/convert-to/pdf', 'data', 'sample.docx', DOCX_MIME, sampleDocx),
 };
 
-const carboneDocx = {
+const carboneDocxIce = {
   conversion: 'DOCX → PDF',
-  engine: 'libreoffice',
+  variant: 'ice',
+  engine: 'ice',
+  chartTag: 'ICE',
   script: 'carbone-converter.js',
   metric: 'carbone_latency',
-  verify: carboneJson(DOCX_MIME, sampleDocx),
+  k6Env: { CONVERTER: 'I' },
+  verify: carboneJson(DOCX_MIME, sampleDocx, { converter: 'I' }),
+};
+
+// Kept for comparison with ICE: only reported in RESULT.md
+const carboneDocxLibreoffice = {
+  conversion: 'DOCX → PDF',
+  variant: 'libreoffice',
+  engine: 'libreoffice',
+  headline: false,
+  script: 'carbone-converter.js',
+  metric: 'carbone_latency',
+  k6Env: { CONVERTER: 'L' },
+  verify: carboneJson(DOCX_MIME, sampleDocx, { converter: 'L' }),
 };
 
 const carboneHtml = {
@@ -168,7 +183,7 @@ export const SERVICES = [
     image: CARBONE_IMAGE,
     ports: [4000, 4000],
     cmd: ['webserver', '-s', '-f', '1'],
-    tests: [carboneDocx, carboneHtml],
+    tests: [carboneDocxIce, carboneDocxLibreoffice, carboneHtml],
   },
   {
     id: 'carbone-4',
@@ -178,7 +193,7 @@ export const SERVICES = [
     image: CARBONE_IMAGE,
     ports: [4000, 4000],
     cmd: ['webserver', '-s', '-f', '4'],
-    tests: [carboneDocx, carboneHtml],
+    tests: [carboneDocxIce, carboneDocxLibreoffice, carboneHtml],
   },
   {
     id: 'gotenberg-1',
@@ -229,10 +244,18 @@ export const SERVICES = [
   },
 ];
 
-/** Flattened list of tests, each one linked to its service. */
+/**
+ * Flattened list of tests, each one linked to its service.
+ * Optional test fields:
+ * - variant: suffix of the test id, when a service runs the same conversion with several engines
+ * - headline: false to report the test only in RESULT.md (not in the README table nor the chart)
+ * - chartTag: shown next to the conversion in the chart labels
+ * - k6Env: extra environment variables passed to k6
+ */
 export const TESTS = SERVICES.flatMap((service) =>
   service.tests.map((test) => {
     const format = test.conversion.startsWith('HTML') ? 'html' : 'docx';
-    return { ...test, id: `${service.id}-${format}`, format, service };
+    const id = [service.id, format, test.variant].filter(Boolean).join('-');
+    return { ...test, id, format, service };
   }),
 );

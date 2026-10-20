@@ -18,10 +18,10 @@ A detailed performance benchmark comparing the most popular free and open-source
 <!-- BENCH:SUMMARY:START -->
 | Tool              | Threads         | Conversion | Avg Latency | Throughput (RPS) |
 | ----------------- | --------------- | ---------- | ----------- | ---------------- |
-| **Carbone**       | 4 (chrome)      | HTML → PDF | 7.63ms      | 632.97           |
-| **Carbone**       | 4 (libreoffice) | DOCX → PDF | 15.15ms     | 326.26           |
-| **Carbone**       | 1 (chrome)      | HTML → PDF | 18.36ms     | 267.86           |
-| **Carbone**       | 1 (libreoffice) | DOCX → PDF | 42.31ms     | 117.44           |
+| **Carbone**       | 4 (ice)         | DOCX → PDF | 1.69ms      | 2812.39          |
+| **Carbone**       | 1 (ice)         | DOCX → PDF | 1.84ms      | 2597.40          |
+| **Carbone**       | 4 (chrome)      | HTML → PDF | 7.50ms      | 643.89           |
+| **Carbone**       | 1 (chrome)      | HTML → PDF | 17.56ms     | 279.76           |
 | **Collabora**     | 4 (libreoffice) | DOCX → PDF | 79.07ms     | 62.75            |
 | **Collabora**     | 1 (libreoffice) | DOCX → PDF | 89.21ms     | 55.64            |
 | **Jod-converter** | 4 (libreoffice) | DOCX → PDF | 91.00ms     | 54.72            |
@@ -32,8 +32,10 @@ A detailed performance benchmark comparing the most popular free and open-source
 | **Pandoc**        | n/a (latex)     | DOCX → PDF | 526.94ms    | 9.45             |
 | **Pandoc**        | n/a (latex)     | HTML → PDF | 734.28ms    | 6.79             |
 
-> 💡 **Key Finding**: Carbone consistently outperforms other solutions, achieving up to **632.97 RPS** for HTML to PDF conversions (4 threads).
+> 💡 **Key Finding**: Carbone consistently outperforms other solutions, achieving up to **2812.39 RPS** for DOCX to PDF conversions (4 threads).
 <!-- BENCH:SUMMARY:END -->
+
+> ℹ️ **Carbone DOCX → PDF** uses [Carbone ICE](https://carbone.io/documentation/developer/http-api/generate-reports.html#converters) (`"converter": "I"`), the converter built into Carbone, with no office suite involved. Carbone + LibreOffice (`"converter": "L"`) is still measured in every run, see [RESULT.md](RESULT.md).
 
 > ⚡ **Performance Note**: Carbone could potentially be even faster, as it performs additional parsing to detect Carbone tags within documents in addition to the conversion process. This means Carbone is doing more work (template parsing + conversion) while still achieving the best performance.
 
@@ -42,10 +44,10 @@ A detailed performance benchmark comparing the most popular free and open-source
 ## 📈 Key Insights
 
 <!-- BENCH:INSIGHTS:START -->
-- ⚡ **Fastest Overall**: Carbone with 4 threads (7.63ms avg for HTML→PDF)
+- ⚡ **Fastest Overall**: Carbone with 4 threads (1.69ms avg for DOCX→PDF)
 - 🚀 **Best Scalability**: Jod-converter gets 3.2x more throughput on DOCX→PDF when going from 1 to 4 threads
-- 📄 **DOCX Conversion**: Carbone leads with 15.15ms (4 threads) vs 79.07ms (Collabora)
-- 🌐 **HTML Conversion**: Carbone leads with 7.63ms (4 threads) vs 371.65ms (Gotenberg)
+- 📄 **DOCX Conversion**: Carbone leads with 1.69ms (4 threads) vs 79.07ms (Collabora)
+- 🌐 **HTML Conversion**: Carbone leads with 7.50ms (4 threads) vs 371.65ms (Gotenberg)
 <!-- BENCH:INSIGHTS:END -->
 
 
@@ -53,7 +55,7 @@ A detailed performance benchmark comparing the most popular free and open-source
 
 | Tool | Version | Description |
 |------|---------|-------------|
-| [**Carbone Community Edition**](https://carbone.io) | 5.16.0 | Document generation/conversion engine |
+| [**Carbone Community Edition**](https://carbone.io) | 5.16.0 | Document generation/conversion engine (converters: Carbone ICE, LibreOffice, Chrome) |
 | [**Collabora**](https://www.collaboraoffice.com) | Latest | LibreOffice-based document server |
 | [**Jod-converter**](https://github.com/jodconverter/jodconverter) | Latest | Java-based document converter |
 | [**Gotenberg**](https://gotenberg.dev) | 8.38.1 | Docker-powered document conversion API |
@@ -95,7 +97,7 @@ node bench.mjs run
 # Only check that every converter produces a valid PDF (no load test)
 node bench.mjs verify
 
-# Benchmark a subset: a tool, a service, a test or a format
+# Benchmark a subset: a tool, a service, a test, a format or a variant (ice, libreoffice)
 node bench.mjs run --only carbone
 node bench.mjs run --only gotenberg-4,pandoc-html
 node bench.mjs run --only html --duration 30s --vus 10
@@ -204,13 +206,24 @@ docker run -t -i --rm -p 4000:4000 \
 
 #### 2. Verify Conversion
 
-**DOCX to PDF** (using LibreOffice):
+**DOCX to PDF** (using Carbone ICE, `"converter": "I"`):
 
 ```bash
 base64_template=$(base64 < ./sample.docx | tr -d '\r\n')
 curl -k \
   -H "Content-Type: application/json" \
-  -d "{\"data\": {}, \"template\": \"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,${base64_template}\", \"convertTo\": \"pdf\"}" \
+  -d "{\"data\": {}, \"converter\":\"I\", \"template\": \"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,${base64_template}\", \"convertTo\": \"pdf\"}" \
+  http://localhost:4000/render/template?download=true \
+  --output outputCarboneICE.pdf
+```
+
+**DOCX to PDF** (using LibreOffice, `"converter": "L"`):
+
+```bash
+base64_template=$(base64 < ./sample.docx | tr -d '\r\n')
+curl -k \
+  -H "Content-Type: application/json" \
+  -d "{\"data\": {}, \"converter\":\"L\", \"template\": \"data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,${base64_template}\", \"convertTo\": \"pdf\"}" \
   http://localhost:4000/render/template?download=true \
   --output outputCarbone.pdf
 ```
@@ -229,7 +242,10 @@ curl -k \
 #### 3. Run Benchmark
 
 ```bash
-# DOCX to PDF conversion
+# DOCX to PDF conversion with Carbone ICE
+k6 run -e CONVERTER=I carbone-converter.js
+
+# DOCX to PDF conversion with LibreOffice (default of the script)
 k6 run carbone-converter.js
 
 # HTML to PDF conversion
@@ -343,7 +359,7 @@ k6 run pandoc-converter.js
 
 <!-- BENCH:ENVIRONMENT:START -->
 **Software Versions:**
-- **Benchmark Date**: October 20th, 2026
+- **Benchmark Date**: October 21st, 2026
 - **k6**: v2.2.0 | **Docker Engine**: 29.9.1 (14 CPUs, 8 GB allocated to Docker)
 - **Docker Images**:
   - Jod-converter: `ghcr.io/jodconverter/jodconverter-examples:rest` (built 2025-09-20, digest `sha256:3213ae4931b8`, amd64)

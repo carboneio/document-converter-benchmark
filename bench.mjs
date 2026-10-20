@@ -25,7 +25,8 @@ Commands:
   report               Regenerate README.md, RESULT.md and result.svg from results/summary.json
 
 Options:
-  --only <a,b,...>     Filter by tool (carbone), service (carbone-4), test (carbone-4-html) or format (html, docx)
+  --only <a,b,...>     Filter by tool (carbone), service (carbone-4), test (carbone-4-html),
+                       format (html, docx) or variant (ice, libreoffice)
   --duration <d>       k6 test duration (default: 1m)
   --vus <n>            k6 virtual users (default: 5)
   --warmup <n>         Conversions sent before each k6 run (default: 10)
@@ -83,6 +84,7 @@ function selectTests(only) {
       t === test.id ||
       t === test.service.id ||
       t === test.format ||
+      t === test.variant ||
       test.service.tool.toLowerCase().startsWith(t),
     ),
   );
@@ -235,6 +237,7 @@ function runK6(test, { vus, duration }) {
     '-e', `BASE_URL=${baseUrl(test.service)}`,
     '-e', `VUS=${vus}`,
     '-e', `DURATION=${duration}`,
+    ...Object.entries(test.k6Env ?? {}).flatMap(([key, value]) => ['-e', `${key}=${value}`]),
     test.script,
   ];
   log(`  k6 ${args.join(' ')}`);
@@ -331,7 +334,8 @@ function listCommand() {
   for (const service of SERVICES) {
     log(`${service.id.padEnd(13)} ${service.image}  ${(service.cmd ?? []).join(' ')}`);
     for (const test of TESTS.filter((t) => t.service === service)) {
-      log(`  - ${test.id.padEnd(18)} ${test.conversion.padEnd(11)} ${test.script}`);
+      const env = Object.entries(test.k6Env ?? {}).map(([k, v]) => `${k}=${v}`).join(' ');
+      log(`  - ${test.id.padEnd(27)} ${test.conversion.padEnd(11)} ${test.script}${env ? ` (${env})` : ''}`);
     }
   }
 }
@@ -359,6 +363,9 @@ async function processServices(tests, opts, { benchmark }) {
           version: service.version,
           conversion: test.conversion,
           engine: test.engine,
+          variant: test.variant,
+          headline: test.headline !== false,
+          chartTag: test.chartTag,
           threads: service.threads,
           threadsUnit: service.threadsUnit ?? 'thread',
           command: (service.cmd ?? []).join(' '),
