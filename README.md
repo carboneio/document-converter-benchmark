@@ -18,23 +18,23 @@ A detailed performance benchmark comparing the most popular free and open-source
 <!-- BENCH:SUMMARY:START -->
 | Tool              | Threads         | Conversion | Avg Latency | Throughput (RPS) |
 | ----------------- | --------------- | ---------- | ----------- | ---------------- |
-| **Carbone**       | 4 (chrome)      | HTML → PDF | 7.29ms      | 669.72           |
-| **Carbone**       | 4 (ice)         | DOCX → PDF | 16.58ms     | 286.77           |
-| **Carbone**       | 1 (chrome)      | HTML → PDF | 17.74ms     | 277.39           |
-| **Carbone**       | 4 (libreoffice) | DOCX → PDF | 49.25ms     | 99.50            |
-| **Carbone**       | 1 (ice)         | DOCX → PDF | 50.88ms     | 96.26            |
-| **Collabora**     | 4 (libreoffice) | DOCX → PDF | 79.81ms     | 62.22            |
-| **Collabora**     | 1 (libreoffice) | DOCX → PDF | 87.52ms     | 56.74            |
-| **Jod-converter** | 4 (libreoffice) | DOCX → PDF | 90.37ms     | 55.13            |
-| **Carbone**       | 1 (libreoffice) | DOCX → PDF | 171.33ms    | 28.96            |
-| **Jod-converter** | 1 (libreoffice) | DOCX → PDF | 302.16ms    | 16.50            |
-| **Gotenberg**     | 4 (chrome)      | HTML → PDF | 355.62ms    | 14.03            |
-| **Gotenberg**     | 1 (chrome)      | HTML → PDF | 369.83ms    | 13.50            |
-| **Gotenberg**     | 1 (libreoffice) | DOCX → PDF | 501.64ms    | 9.91             |
-| **Pandoc**        | n/a (latex)     | DOCX → PDF | 521.95ms    | 9.57             |
-| **Pandoc**        | n/a (latex)     | HTML → PDF | 734.61ms    | 6.79             |
+| **Carbone**       | 4 (chrome)      | HTML → PDF | 7.74ms      | 626.12           |
+| **Carbone**       | 4 (ice)         | DOCX → PDF | 16.96ms     | 280.52           |
+| **Carbone**       | 1 (chrome)      | HTML → PDF | 18.03ms     | 272.48           |
+| **Carbone**       | 4 (libreoffice) | DOCX → PDF | 49.07ms     | 99.87            |
+| **Carbone**       | 1 (ice)         | DOCX → PDF | 50.76ms     | 96.48            |
+| **Collabora**     | 4 (libreoffice) | DOCX → PDF | 81.59ms     | 60.84            |
+| **Jod-converter** | 4 (libreoffice) | DOCX → PDF | 91.82ms     | 54.27            |
+| **Collabora**     | 1 (libreoffice) | DOCX → PDF | 91.86ms     | 54.06            |
+| **Carbone**       | 1 (libreoffice) | DOCX → PDF | 169.21ms    | 29.31            |
+| **Jod-converter** | 1 (libreoffice) | DOCX → PDF | 306.82ms    | 16.25            |
+| **Gotenberg**     | 4 (chrome)      | HTML → PDF | 374.74ms    | 13.32            |
+| **Gotenberg**     | 1 (libreoffice) | DOCX → PDF | 400.58ms    | 12.44            |
+| **Gotenberg**     | 1 (chrome)      | HTML → PDF | 478.42ms    | 10.41            |
+| **Pandoc**        | n/a (latex)     | DOCX → PDF | 549.00ms    | 9.09             |
+| **Pandoc**        | n/a (latex)     | HTML → PDF | 737.57ms    | 6.76             |
 
-> 💡 **Key Finding**: Carbone consistently outperforms other solutions, achieving up to **669.72 RPS** for HTML to PDF conversions (4 threads).
+> 💡 **Key Finding**: Carbone consistently outperforms other solutions, achieving up to **626.12 RPS** for HTML to PDF conversions (4 threads).
 <!-- BENCH:SUMMARY:END -->
 
 > ℹ️ **Carbone DOCX → PDF** is measured with two converters: [Carbone ICE](https://carbone.io/documentation/developer/http-api/generate-reports.html#converters) (`"converter": "I"`, `ice` in the table), the converter built into Carbone with no office suite involved, and LibreOffice (`"converter": "L"`, `libreoffice` in the table).
@@ -46,10 +46,10 @@ A detailed performance benchmark comparing the most popular free and open-source
 ## 📈 Key Insights
 
 <!-- BENCH:INSIGHTS:START -->
-- ⚡ **Fastest Overall**: Carbone with 4 threads (7.29ms avg for HTML→PDF)
+- ⚡ **Fastest Overall**: Carbone with 4 threads (7.74ms avg for HTML→PDF)
 - 🚀 **Best Scalability**: Carbone LibreOffice gets 3.4x more throughput on DOCX→PDF when going from 1 to 4 threads
-- 📄 **DOCX Conversion**: Carbone ICE leads with 16.58ms (4 threads) vs 79.81ms (Collabora)
-- 🌐 **HTML Conversion**: Carbone leads with 7.29ms (4 threads) vs 355.62ms (Gotenberg)
+- 📄 **DOCX Conversion**: Carbone ICE leads with 16.96ms (4 threads) vs 81.59ms (Collabora)
+- 🌐 **HTML Conversion**: Carbone leads with 7.74ms (4 threads) vs 374.74ms (Gotenberg)
 <!-- BENCH:INSIGHTS:END -->
 
 
@@ -266,6 +266,9 @@ k6 run carbone-converter-html.js
 docker run --rm -p 4000:3000 \
   gotenberg/gotenberg:8.38.1 \
   gotenberg \
+  --chromium-max-concurrency=1 \
+  --chromium-restart-after=0 \
+  --libreoffice-restart-after=0 \
   --chromium-auto-start=true
 
 # Multi-thread (4 concurrency)
@@ -273,8 +276,12 @@ docker run --rm -p 4000:3000 \
   gotenberg/gotenberg:8.38.1 \
   gotenberg \
   --chromium-max-concurrency=4 \
+  --chromium-restart-after=0 \
+  --libreoffice-restart-after=0 \
   --chromium-auto-start=true
 ```
+
+Gotenberg defaults to `--chromium-max-concurrency=6` and periodically restarts its engines (`--chromium-restart-after=100`, `--libreoffice-restart-after=10`). The benchmark sets the concurrency explicitly and disables restarts to measure raw conversion speed, like the other tools.
 
 #### 2. Verify Conversion
 
@@ -368,7 +375,7 @@ k6 run pandoc-converter.js
   - Collabora: `collabora/code:latest` (built 2026-10-09, digest `sha256:bb8f3c9c5c90`, arm64)
   - Carbone Community Edition (Free Edition): `carbone/carbone-ee:full-5.16.0` (built 2026-10-20, digest `sha256:9cc31ce7e861`, arm64)
   - Gotenberg: `gotenberg/gotenberg:8.38.1` (version 8.38.1, built 2026-10-15, digest `sha256:aa552cc115db`, arm64)
-  - Pandoc: `pandoc-bench` (version 3.11, built 2026-10-20, digest `sha256:6086602b4ce5`, amd64, wrapped with a minimal HTTP server, see [`pandoc/`](pandoc/))
+  - Pandoc: `pandoc-bench` (version 3.11, built 2026-10-20, digest `sha256:3288a8ebb562`, amd64, wrapped with a minimal HTTP server, see [`pandoc/`](pandoc/))
 
 ### Test Configuration
 

@@ -1,23 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1005" height="990">
-  <rect width="1005" height="990" x="0" y="0" fill="#FFFFFF" id="background"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1109" height="990">
+  <rect width="1109" height="990" x="0" y="0" fill="#FFFFFF" id="background"/>
   <g id="viz">
-    <g transform="translate(250,20)">
+    <g transform="translate(354,20)">
       <g class="bars">
-          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="6" height="50" width="521.4276840518428" fill="#A644C5"/>
-          <rect id="bar - Carbone DOCX to PDF (ICE) / 4 threads" x="0" y="68" height="50" width="223.27345142521614" fill="#A644C5"/>
-          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="130" height="50" width="215.9711605099913" fill="#A644C5"/>
-          <rect id="bar - Carbone DOCX to PDF (LibreOffice) / 4 threads" x="0" y="192" height="50" width="77.46750619845574" fill="#A644C5"/>
-          <rect id="bar - Carbone DOCX to PDF (ICE) / 1 thread" x="0" y="254" height="50" width="74.94164449659868" fill="#A644C5"/>
-          <rect id="bar - Collabora DOCX to PDF / 4 threads" x="0" y="316" height="50" width="48.443650154050744" fill="#ff7f0e"/>
-          <rect id="bar - Collabora DOCX to PDF / 1 thread" x="0" y="378" height="50" width="44.17826463668526" fill="#ff7f0e"/>
-          <rect id="bar - Jod DOCX to PDF / 4 threads" x="0" y="440" height="50" width="42.92563472827574" fill="#d62728"/>
-          <rect id="bar - Carbone DOCX to PDF (LibreOffice) / 1 thread" x="0" y="502" height="50" width="22.545682958853646" fill="#A644C5"/>
-          <rect id="bar - Jod DOCX to PDF / 1 thread" x="0" y="564" height="50" width="12.847672818132631" fill="#d62728"/>
-          <rect id="bar - Gotenberg HTML to PDF / 4 concurrency" x="0" y="626" height="50" width="10.927002679708455" fill="#358BBA"/>
-          <rect id="bar - Gotenberg HTML to PDF / 1 concurrency" x="0" y="688" height="50" width="10.510636658263099" fill="#358BBA"/>
-          <rect id="bar - Gotenberg DOCX to PDF / 1 concurrency" x="0" y="750" height="50" width="7.717690102856785" fill="#358BBA"/>
-          <rect id="bar - Pandoc DOCX to PDF" x="0" y="812" height="50" width="7.447038144027611" fill="#2ca02c"/>
-          <rect id="bar - Pandoc HTML to PDF" x="0" y="874" height="50" width="5.289745884063996" fill="#2ca02c"/>
+          <rect id="bar - Carbone HTML to PDF / 4 threads" x="0" y="6" height="50" width="487.47661736730566" fill="#A644C5"/>
+          <rect id="bar - Carbone DOCX to PDF (ICE) / 4 threads" x="0" y="68" height="50" width="218.40285655556653" fill="#A644C5"/>
+          <rect id="bar - Carbone HTML to PDF / 1 thread" x="0" y="130" height="50" width="212.1437712592522" fill="#A644C5"/>
+          <rect id="bar - Carbone DOCX to PDF (LibreOffice) / 4 threads" x="0" y="192" height="50" width="77.75433233385911" fill="#A644C5"/>
+          <rect id="bar - Carbone DOCX to PDF (ICE) / 1 thread" x="0" y="254" height="50" width="75.11358074576164" fill="#A644C5"/>
+          <rect id="bar - Collabora DOCX to PDF / 4 threads" x="0" y="316" height="50" width="47.36722784394964" fill="#ff7f0e"/>
+          <rect id="bar - Jod DOCX to PDF / 4 threads" x="0" y="378" height="50" width="42.2562146293579" fill="#d62728"/>
+          <rect id="bar - Collabora DOCX to PDF / 1 thread" x="0" y="440" height="50" width="42.092224583390504" fill="#ff7f0e"/>
+          <rect id="bar - Carbone DOCX to PDF (LibreOffice) / 1 thread" x="0" y="502" height="50" width="22.82102405928553" fill="#A644C5"/>
+          <rect id="bar - Jod DOCX to PDF / 1 thread" x="0" y="564" height="50" width="12.649501081271314" fill="#d62728"/>
+          <rect id="bar - Gotenberg HTML to PDF / 4 concurrency" x="0" y="626" height="50" width="10.369777643400587" fill="#358BBA"/>
+          <rect id="bar - Gotenberg DOCX to PDF / 1 concurrency" x="0" y="688" height="50" width="9.685493214293215" fill="#358BBA"/>
+          <rect id="bar - Gotenberg HTML to PDF / 1 concurrency" x="0" y="750" height="50" width="8.106461983977924" fill="#358BBA"/>
+          <rect id="bar - Pandoc DOCX to PDF" x="0" y="812" height="50" width="7.076944991616045" fill="#2ca02c"/>
+          <rect id="bar - Pandoc HTML to PDF" x="0" y="874" height="50" width="5.2633731381904" fill="#2ca02c"/>
       </g>
       <g id="xAxis" transform="translate(0,930)" fill="none" font-size="12" font-family="sans-serif" text-anchor="middle">
         <path class="domain" stroke="currentColor" d="M0,6V0H545V6"/>
@@ -83,11 +83,11 @@
           </g>
           <g class="tick" opacity="1" transform="translate(0,403)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Collabora DOCX to PDF / 1 thread</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Jod DOCX to PDF / 4 threads</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,465)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Jod DOCX to PDF / 4 threads</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Collabora DOCX to PDF / 1 thread</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,527)">
             <line stroke="currentColor" x2="-6"/>
@@ -103,11 +103,11 @@
           </g>
           <g class="tick" opacity="1" transform="translate(0,713)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Gotenberg HTML to PDF / 1 concurrency</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Gotenberg DOCX to PDF / 1 concurrency</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,775)">
             <line stroke="currentColor" x2="-6"/>
-            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Gotenberg DOCX to PDF / 1 concurrency</text>
+            <text fill="currentColor" x="-9" dy="0.32em" style="font-family: Arial, sans-serif; font-size: 12px;">Gotenberg HTML to PDF / 1 concurrency</text>
           </g>
           <g class="tick" opacity="1" transform="translate(0,837)">
             <line stroke="currentColor" x2="-6"/>
@@ -120,7 +120,7 @@
       </g>
     </g>
   </g>
-  <g id="legend" transform="translate(805,20)">
+  <g id="legend" transform="translate(909,20)">
     <g transform="translate(5,0)">
       <g class="legendColor">
         <g class="legendCells" transform="translate(0,15.5)">

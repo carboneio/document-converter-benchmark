@@ -258,14 +258,21 @@ function niceStep(max, targetTicks = 12) {
   return [1, 2, 2.5, 5, 10].map((m) => m * pow).find((s) => s >= rough);
 }
 
+// Rough Arial 12px advance width; SVG cannot measure text, so labels are sized by estimate
+function estimateTextWidth(text, bold) {
+  return text.length * (bold ? 7.2 : 6.6);
+}
+
 function writeSvg(root, rows) {
-  const left = 250;
+  const longestLabel = Math.max(...rows.map((r) => estimateTextWidth(chartLabel(r), toolInfo(r.tool).bold)));
+  const left = Math.max(250, Math.ceil(longestLabel + 30));
   const top = 20;
   const plotWidth = 545;
   const bandStep = 62;
   const barHeight = 50;
   const plotHeight = rows.length * bandStep;
-  const width = 1005;
+  const legendX = left + plotWidth + 10;
+  const width = legendX + 200;
   const height = top + plotHeight + 40;
 
   const maxRps = Math.max(...rows.map((r) => r.metrics.rps));
@@ -325,7 +332,7 @@ ${yTicks.join('\n')}
       </g>
     </g>
   </g>
-  <g id="legend" transform="translate(805,20)">
+  <g id="legend" transform="translate(${legendX},20)">
     <g transform="translate(5,0)">
       <g class="legendColor">
         <g class="legendCells" transform="translate(0,15.5)">

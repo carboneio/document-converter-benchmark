@@ -122,6 +122,15 @@ const gotenbergDocx = {
   verify: multipart('/forms/libreoffice/convert', 'files', 'sample.docx', DOCX_MIME, sampleDocx),
 };
 
+// Gotenberg defaults: chromium-max-concurrency=6, chromium-restart-after=100, libreoffice-restart-after=10
+const gotenbergCmd = (n) => [
+  'gotenberg',
+  `--chromium-max-concurrency=${n}`,
+  '--chromium-restart-after=0',
+  '--libreoffice-restart-after=0',
+  '--chromium-auto-start=true',
+];
+
 const collaboraParams = (n) =>
   `--o:ssl.enable=false --o:ssl.termination=true --o:per_document.max_concurrency=${n} --o:num_prespawn_children=${n}`;
 
@@ -202,7 +211,7 @@ export const SERVICES = [
     threadsUnit: 'concurrency',
     image: GOTENBERG_IMAGE,
     ports: [4000, 3000],
-    cmd: ['gotenberg', '--chromium-auto-start=true'],
+    cmd: gotenbergCmd(1),
     tests: [gotenbergHtml, gotenbergDocx],
   },
   {
@@ -213,7 +222,7 @@ export const SERVICES = [
     threadsUnit: 'concurrency',
     image: GOTENBERG_IMAGE,
     ports: [4000, 3000],
-    cmd: ['gotenberg', '--chromium-max-concurrency=4', '--chromium-auto-start=true'],
+    cmd: gotenbergCmd(4),
     tests: [gotenbergHtml],
   },
   {

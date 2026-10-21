@@ -1,10 +1,10 @@
   █ THRESHOLDS
 
     carbone_latency
-    ✓ 'p(95)<5000' p(95)=57.9118
+    ✓ 'p(95)<5000' p(95)=57.7996
 
     http_req_duration
-    ✓ 'p(95)<5000' p(95)=57.91ms
+    ✓ 'p(95)<5000' p(95)=57.79ms
 
     http_req_failed
     ✓ 'rate<0.01' rate=0.00%
@@ -12,32 +12,32 @@
 
   █ TOTAL RESULTS
 
-    checks_total.......: 11560   192.510646/s
-    checks_succeeded...: 100.00% 11560 out of 11560
-    checks_failed......: 0.00%   0 out of 11560
+    checks_total.......: 11586   192.952318/s
+    checks_succeeded...: 100.00% 11586 out of 11586
+    checks_failed......: 0.00%   0 out of 11586
 
     ✓ status is 200
     ✓ duration < 10s
 
     CUSTOM
-    carbone_latency................: avg=50.875799 min=22.157  med=49.9275 max=103.751  p(90)=54.785  p(95)=57.9118
+    carbone_latency................: avg=50.75975 min=23.326  med=49.893  max=82.463  p(90)=54.861  p(95)=57.7996
 
     HTTP
-    http_req_duration..............: avg=50.87ms   min=22.15ms med=49.92ms max=103.75ms p(90)=54.78ms p(95)=57.91ms
-      { expected_response:true }...: avg=50.87ms   min=22.15ms med=49.92ms max=103.75ms p(90)=54.78ms p(95)=57.91ms
-    http_req_failed................: 0.00%  0 out of 5780
-    http_reqs......................: 5780   96.255323/s
+    http_req_duration..............: avg=50.75ms  min=23.32ms med=49.89ms max=82.46ms p(90)=54.86ms p(95)=57.79ms
+      { expected_response:true }...: avg=50.75ms  min=23.32ms med=49.89ms max=82.46ms p(90)=54.86ms p(95)=57.79ms
+    http_req_failed................: 0.00%  0 out of 5793
+    http_reqs......................: 5793   96.476159/s
 
     EXECUTION
-    iteration_duration.............: avg=51.9ms    min=24.67ms med=50.86ms max=105.56ms p(90)=55.72ms p(95)=58.86ms
-    iterations.....................: 5780   96.255323/s
+    iteration_duration.............: avg=51.79ms  min=24.38ms med=50.81ms max=83.58ms p(90)=55.82ms p(95)=58.79ms
+    iterations.....................: 5793   96.476159/s
     vus............................: 5      min=5         max=5
     vus_max........................: 5      min=5         max=5
 
     NETWORK
-    data_received..................: 309 MB 5.1 MB/s
+    data_received..................: 310 MB 5.2 MB/s
     data_sent......................: 254 MB 4.2 MB/s
 
 
-running (1m00.0s), 0/5 VUs, 5780 complete and 0 interrupted iterations
+running (1m00.0s), 0/5 VUs, 5793 complete and 0 interrupted iterations
 default ✓ [ 100% ] 5 VUs  1m0s
